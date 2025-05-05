@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Level Prep - Comprehensive Exam Preparation Courses | Faiz Computer Institute</title>
+    <meta name="description" content="Join Faiz Computer Institute for comprehensive O Level exam preparation courses. Enhance your skills with expert-led training in MS Office, programming languages, and more.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="O Level Prep - Comprehensive Exam Preparation Courses">
+    <meta property="og:description" content="Join Faiz Computer Institute for comprehensive O Level exam preparation courses. Enhance your skills with expert-led training in MS Office, programming languages, and more.">
+    <meta property="og:image" content="URL_to_your_image.jpg">
+    <meta property="og:url" content="URL_to_your_page">
+    <style>
+         .fade-background {
+        position: relative;
+         width: 100%;
+        height: 100vh;
+}
+
+.fade-background::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('Tech-Prep..jpg');
+        background-size: 100% 100%;
+        background-position: center;
+        opacity: 0.5; /* Adjust the opacity to control the fade effect */
+        z-index: -1; /* Make sure the background image is behind the content */
+}
+
+        .privacy h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="fade-background">
+
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="Nielet.html">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Libre-Office</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Writer</a>
+                    <a href="excel.html">Spreadsheet</a>
+                    <a href="powerpoint.html">Impress</a>
+                    <a href="#">Shortcut Keys</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">Exam Interface</a>
+                <div class="dropdown-content">
+                    <a href="">O Level</a>
+                    <a href="#">CCC</a>
+                    <a href="#">MS-Office</a>
+                    <a href="#">Programming Languages</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    <a href="it.html">M1-R5</a>
+                    <a href="web.html">M2-R5</a>
+                    <a href="python.html">M3-R5</a>
+                    <a href="iot.html">M4-R5</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <header class="privacy">
+        <h1>Privacy Policy</h1>
+    </header>
+    <script>
+           const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const closeButton = document.getElementById('close-button');
+
+        // Add event listener for the mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Check if the nav links are active
+            if (navLinks.classList.contains('active')) {
+                closeButton.style.display = 'block'; // Show close button
+                mobileMenu.style.display = 'none'; // Hide mobile menu toggle button
+            } else {
+                closeButton.style.display = 'none'; // Hide close button
+                mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+            }
+        });
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+    </script>

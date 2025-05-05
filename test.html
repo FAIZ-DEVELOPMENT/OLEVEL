@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Questionnaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+        }
+
+        .question-box {
+            width: 70%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        .question-list {
+            width: 30%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-list h3 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .question-button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .question-button:hover {
+            background-color: #45a049;
+        }
+
+        .question-display {
+            font-size: 18px;
+        }
+
+        .option {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question-box">
+            <div id="question-display" class="question-display">
+                <h2>Click a question to view it</h2>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+        <div class="question-list">
+            <h3>Questions</h3>
+            <ul>
+                <li><button class="question-button" onclick="showQuestion(1)">1. Question 1</button></li>
+                <li><button class="question-button" onclick="showQuestion(2)">2. Question 2</button></li>
+                <li><button class="question-button" onclick="showQuestion(3)">3. Question 3</button></li>
+                <li><button class="question-button" onclick="showQuestion(4)">4. Question 4</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Questions data
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["Berlin", "Madrid", "Paris", "Rome"],
+                correct: "Paris"
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: ["Earth", "Mars", "Jupiter", "Saturn"],
+                correct: "Mars"
+            },
+            {
+                question: "Who wrote 'Romeo and Juliet'?",
+                options: ["Shakespeare", "Dickens", "Hemingway", "Austen"],
+                correct: "Shakespeare"
+            },
+            {
+                question: "What is the largest ocean on Earth?",
+                options: ["Atlantic", "Indian", "Arctic", "Pacific"],
+                correct: "Pacific"
+            }
+        ];
+
+        // Function to display the selected question
+        function showQuestion(number) {
+            const question = questions[number - 1];
+            const displayArea = document.getElementById('question-display');
+            displayArea.innerHTML = `
+                <h2>Question ${number}</h2>
+                <p><strong>Q: ${question.question}</strong></p>
+                <div id="options">
+                    ${question.options.map(option => `
+                        <div class="option" onclick="checkAnswer('${option}', ${number})">
+                            ${option}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            document.getElementById('feedback').innerHTML = '';  // Clear feedback area when a new question is clicked
+        }
+
+        // Function to check the answer
+        function checkAnswer(selectedOption, questionNumber) {
+            const question = questions[questionNumber - 1];
+            const feedbackArea = document.getElementById('feedback');
+            const options = document.querySelectorAll('.option');
+
+            // Reset styles for all options
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+            });
+
+            if (selectedOption === question.correct) {
+                feedbackArea.innerHTML = "Correct!";
+                options.forEach(option => {
+                    if (option.textContent === question.correct) {
+                        option.classList.add('correct');
+                    }
+                });
+            } else {
+                feedbackArea.innerHTML = `Incorrect! The correct answer is: ${question.correct}`;
+                options.forEach(option => {
+                    if (option.textContent === selectedOption) {
+                        option.classList.add('incorrect');
+                    } else if (option.textContent === question.correct) {
+                        option.classList.add('correct');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

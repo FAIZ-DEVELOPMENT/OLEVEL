@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Practice | Faiz Computer Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pythoncompiler.css">
+      
+</head>
+<body>
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="Nielet.html">O Level</a>
+                    <a href="ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Shortcut Keys</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">O Level</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
+                    <a href="#">Internet Of things</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    
+                    <a href=".html">M1-R5</a>
+                    <a href="htmlcompiler.html">M2-R5</a>
+                    <a href="pythoncompiler.html">M3-R5</a>
+                    <a href="ccompiler.html">M4-R5</a>
+                    <a href="practicalportal.html">More....</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="panel fade-in">
+                <h2><i class="fas fa-question-circle"></i> Python Practice Questions</h2>
+                <div class="question-meta">
+                    <span class="difficulty difficulty-easy">Easy</span>
+                    <span id="question-counter">Question 1 of 20</span>
+                </div>
+                <div id="question-box">Loading question...</div>
+                <div id="answer-box"></div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="loadNextQuestion()">
+                        <i class="fas fa-arrow-right"></i> Next Question
+                    </button>
+                    <button class="btn-secondary" onclick="toggleAnswer()">
+                        <i class="fas fa-lightbulb"></i> Show Answer
+                    </button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="stats">
+                    <span>Completed: <span id="completed-count">0</span>/<span id="total-questions">20</span></span>
+                    <span>Score: <span id="score">0</span>%</span>
+                </div>
+                <div class="completion-message" id="completion-message">
+                    <h3><i class="fas fa-trophy"></i> Congratulations!</h3>
+                    <p>You've completed all the questions with a score of <span id="final-score">0</span>%</p>
+                    <button class="btn-accent" onclick="resetPractice()">
+                        <i class="fas fa-redo"></i> Start Again
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="panel fade-in">
+                <h2><i class="fas fa-code"></i> Python Editor</h2>
+                <div id="editor-panel">
+                    <div id="editor-container">
+                        <iframe src="https://trinket.io/embed/python3/aee8e4b21ca1" allowfullscreen></iframe>
+                    </div>
+                    <div class="button-group" style="margin-top: 1rem;">
+                        <button class="btn-primary" onclick="runCode()">
+                            <i class="fas fa-play"></i> Run Code
+                        </button>
+                        <button class="btn-secondary" onclick="resetEditor()">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Success! Your code ran successfully.</span>
+    </div>
+
+   <script src="pythoncompiler.js"></script>
+</body>
+</html>
