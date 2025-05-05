@@ -373,131 +373,267 @@
     <script>
 const questions = [
     {
-        question: "What was the name of the first electricity-powered computer?",
-        options: ["A. Pioneer-1", "B. Apple-1", "C. Mark-1", "D. Intel-1"],
-        correctAnswer: 2
+        question: "To work in C2C E-Commerce which of the following is required:",
+        options: ["A. i and ii", "B. ii and iv", "C. i and iii", "D. i and iv"],
+        correctAnswer: 1 // Assuming correct answer is B (index 1)
     },
     {
-        question: "Which currency note has a security thread?",
-        options: ["A. Rs. 500/-", "B. Rs. 50/-", "C. Rs. 100/-", "D. All of these"],
-        correctAnswer: 3
+        question: "Which of the following belongs to Systems Software?",
+        options: ["A. Word Processing Software", "B. Web Browser", "C. Operating System", "D. Spreadsheet Software"],
+        correctAnswer: 2 // C
     },
     {
-        question: "Which is not a component of Office Suite?",
-        options: ["A. Writer", "B. Base", "C. Internet Explorer", "D. Impress"],
-        correctAnswer: 2
+        question: "In a client-server system, which type of computer is mostly a client computer?",
+        options: ["A. Microcomputer", "B. Mini-Computer", "C. Mainframe", "D. PDA"],
+        correctAnswer: 0 // A
     },
     {
-        question: "What is the maximum amount that can be remitted by AEPS?",
-        options: ["A. 5000", "B. 50,000", "C. 1,00,000", "D. 10,000"],
-        correctAnswer: 1
+        question: "The maximum number of slides that can be printed on an A4 size page is:",
+        options: ["A. 1", "B. 5", "C. 9", "D. 4"],
+        correctAnswer: 2 // C (typically 9 in Impress)
     },
     {
-        question: "We can save LibreOffice Writer document in:",
-        options: ["A. XML", "B. DOC", "C. DOCX", "D. All of the above"],
-        correctAnswer: 3
+        question: "Which topology is used by FDDI?",
+        options: ["A. Bus Topology", "B. Ring Topology", "C. Dual Ring Topology", "D. Mesh Topology"],
+        correctAnswer: 2 // C
     },
     {
-        question: "When the sender and receiver of an email are on the same system, we need only two:",
-        options: ["A. Email addresses", "B. Usernames", "C. Passwords", "D. None of the above"],
-        correctAnswer: 1
+        question: "Output of the Calc expression is =100/10/2",
+        options: ["A. 25", "B. 50", "C. 5", "D. 200"],
+        correctAnswer: 2 // C (100/10=10, 10/2=5)
     },
     {
-        question: "The first microcomputer in the world is:",
-        options: ["A. ALTAIR 8800", "B. HP", "C. ENIAC", "D. UNIVAC"],
-        correctAnswer: 0
+        question: "USSD Service can be utilized by:",
+        options: ["A. ##99", "B. *11#", "C. *99#", "D. None of the above"],
+        correctAnswer: 2 // C (*99# for USSD in India)
     },
     {
-        question: "In LibreOffice Writer, in which menu is the mail merge option present?",
-        options: ["A. Servers", "B. Domain", "C. User Agents", "D. IP"],
-        correctAnswer: 0
+        question: "Which one is the invalid size of Cache memory?",
+        options: ["A. 2048 Kilobytes", "B. 3072 Kilobytes", "C. 92162 Kilobytes", "D. 512 Kilobytes"],
+        correctAnswer: 2 // C (unrealistically large)
     },
     {
-        question: "What is the full form of PIN?",
-        options: ["A. Personal Identification Number", "B. Permanent Identification Number", "C. Personal Identification Name", "D. None of the above"],
-        correctAnswer: 0
+        question: "What is the validity period of a cheque?",
+        options: ["A. 4 months from date of issue", "B. 3 months from date of issue", "C. 1 month from date of issue", "D. Unlimited"],
+        correctAnswer: 1 // B (3 months in most countries)
     },
     {
-        question: "The language that the computer can understand and execute is called:",
-        options: ["A. Machine language", "B. Assembly language", "C. High-level language", "D. None of the above"],
-        correctAnswer: 0
+        question: "This is not a benefit of Big Data Analytics.",
+        options: ["A. Faster, better decision making", "B. Cost Reduction", "C. Manage of Data", "D. None of the above"],
+        correctAnswer: 2 // C (vague/incorrect phrasing)
     },
     {
-        question: "An application can be opened through a shortcut on the desktop by:",
-        options: ["A. Double Click on its shortcut", "B. Right-clicking and choosing the open option", "C. Selecting the icon and pressing Enter key", "D. All of the above"],
-        correctAnswer: 3
+        question: "What is the result of the formula =MAX(B1:B3)+MIN(B1:B3)? Where B1=5, B2=2, B3=7?",
+        options: ["A. 7+2", "B. 9", "C. 7,2", "D. 5,7"],
+        correctAnswer: 1 // B (7+2=9)
     },
     {
-        question: "What is the default font size in LibreOffice Writer?",
-        options: ["A. 7", "B. 12", "C. 13", "D. 16"],
-        correctAnswer: 1
+        question: "What is the term used for talking on the net with the help of typed text?",
+        options: ["A. New group", "B. E-mail", "C. Chatting", "D. None"],
+        correctAnswer: 2 // C
     },
     {
-        question: "Work done on the internet is called:",
-        options: ["A. Gambling", "B. Surfing", "C. Both A and B", "D. None of these"],
-        correctAnswer: 1
+        question: "What is the full form of BCD?",
+        options: ["A. Binary coded decimalization", "B. Binary coded decimal", "C. Binary coded dedicated", "D. Binary code done"],
+        correctAnswer: 1 // B
     },
     {
-        question: "Which of these areas is closest to AI?",
-        options: ["A. Wiring", "B. French", "C. Drawing", "D. Mathematics"],
-        correctAnswer: 3
+        question: "In LibreOffice Impress in order to see all the slides on one screen use:",
+        options: ["A. View, slide sorter", "B. View, slide", "C. View, master", "D. View, slide show"],
+        correctAnswer: 0 // A
     },
     {
-        question: "In LibreOffice Calc, a formula starts with the symbol:",
-        options: ["A. =", "B. +", "C. &", "D. None of the above"],
-        correctAnswer: 0
+        question: "At the present scenario hub is replaced by:",
+        options: ["A. Router", "B. Bridge", "C. Switch", "D. Gateway"],
+        correctAnswer: 2 // C (switches are more efficient)
     },
     {
-        question: "What was the name of the first electricity-powered computer?",
-        options: ["A. Pioneer-1", "B. Apple-1", "C. Mark-1", "D. Intel-1"],
-        correctAnswer: 2
+        question: "What is the minimum bandwidth required for a broadband connection?",
+        options: ["A. 128 kbps", "B. 256 kbps", "C. 512 kbps", "D. None of these"],
+        correctAnswer: 1 // B (varies by country, but commonly 256 kbps)
     },
     {
-        question: "Which currency note has a security thread?",
-        options: ["A. Rs. 500/-", "B. Rs. 50/-", "C. Rs. 100/-", "D. All of these"],
-        correctAnswer: 3
+        question: "FTP is responsible for:",
+        options: ["A. Instant messaging", "B. Email", "C. Upload/Download", "D. None of the above"],
+        correctAnswer: 2 // C
     },
     {
-        question: "Which is not a component of Office Suite?",
-        options: ["A. Writer", "B. Base", "C. Internet Explorer", "D. Impress"],
-        correctAnswer: 2
+        question: "Extension of LibreOffice Calc spreadsheet is:",
+        options: ["A. .ods", "B. .xlx", "C. .odp", "D. .odt"],
+        correctAnswer: 0 // A (.ods for Calc)
     },
     {
-        question: "What is the maximum amount that can be remitted by AEPS?",
-        options: ["A. 5000", "B. 50,000", "C. 1,00,000", "D. 10,000"],
-        correctAnswer: 1
+        question: "_________ is the exchange of computer stored messages by telecommunication.",
+        options: ["A. E-Web", "B. E-mail", "C. E-net", "D. E-chart"],
+        correctAnswer: 1 // B
     },
     {
-        question: "We can save LibreOffice Writer document in:",
-        options: ["A. XML", "B. DOC", "C. DOCX", "D. All of the above"],
-        correctAnswer: 3
+        question: "On Twitter, trending topics are those that are:",
+        options: ["A. being discussed by the CEO", "B. being written by the user", "C. being discussed by most of the users", "D. None of the above"],
+        correctAnswer: 2 // C
     },
     {
-        question: "When the sender and receiver of an email are on the same system, we need only two:",
-        options: ["A. Email addresses", "B. Usernames", "C. Passwords", "D. None of the above"],
-        correctAnswer: 1
+        question: "In a network, a workstation is a:",
+        options: ["A. Network device", "B. MODEM", "C. Computer", "D. CABLE"],
+        correctAnswer: 2 // C
     },
     {
-        question: "The first microcomputer in the world is:",
-        options: ["A. ALTAIR 8800", "B. HP", "C. ENIAC", "D. UNIVAC"],
-        correctAnswer: 0
+        question: "What will be the result of the formula =\"Hello\" &\"\"&\"World\"?",
+        options: ["A. Hello World", "B. Formula will not work", "C. \"Hello\" &\"\" & \"World\"", "D. Hello & & World"],
+        correctAnswer: 0 // A (concatenation without space)
     },
     {
-        question: "In LibreOffice Writer, in which menu is the mail merge option present?",
-        options: ["A. Servers", "B. Domain", "C. User Agents", "D. IP"],
-        correctAnswer: 0
+        question: "Ethernet is a technology for:",
+        options: ["A. LAN", "B. MAN", "C. WAN", "D. None of the mentioned"],
+        correctAnswer: 0 // A
     },
     {
-        question: "What is the full form of PIN?",
-        options: ["A. Personal Identification Number", "B. Permanent Identification Number", "C. Personal Identification Name", "D. None of the above"],
-        correctAnswer: 0
+        question: "Servers are the computers that:",
+        options: ["A. Make a query", "B. Respond to a query", "C. Both A and B", "D. None of the above"],
+        correctAnswer: 1 // B
     },
     {
-        question: "POS means:",
-        options: ["A. Point of Sale", "B. Place of Sale", "C. Point of Sold", "D. None of these"],
-        correctAnswer: 0
+        question: "Peers are the computers that:",
+        options: ["A. Make a query", "B. Respond to a query", "C. Both A and B", "D. None of the above"],
+        correctAnswer: 2 // C (P2P networks)
+    },
+    {
+        question: "If the cell address changes after copying the formula, the address is known as:",
+        options: ["A. Relative Address", "B. Mixed Address", "C. Absolute Address", "D. None of these"],
+        correctAnswer: 0 // A
+    },
+    {
+        question: "The very new video sharing service launched by Facebook is:",
+        options: ["A. FaceTube", "B. YouTube", "C. Watch", "D. None of the above"],
+        correctAnswer: 2 // C (Facebook Watch)
+    },
+    {
+        question: "IP addresses are divided into sections of:",
+        options: ["A. 1 Byte", "B. 2 Bytes", "C. 3 Bytes", "D. 4 Bytes"],
+        correctAnswer: 3 // D (IPv4: 4 octets/bytes)
+    },
+    {
+        question: "Twitter handles are preceded by the symbol:",
+        options: ["A. @", "B. #", "C. $", "D. None of these"],
+        correctAnswer: 0 // A
+    },
+    {
+        question: "Instant messenger is related to:",
+        options: ["A. Listening to songs", "B. Watching movies", "C. Chatting Online", "D. None of the mentioned"],
+        correctAnswer: 2 // C
+    },
+    {
+        question: "On Twitter, trending topics are preceded by the symbol:",
+        options: ["A. @", "B. #", "C. $", "D. None of these"],
+        correctAnswer: 1 // B (hashtags)
+    },
+    {
+        question: "How many photos can be uploaded on Facebook at a time?",
+        options: ["A. 30", "B. 25", "C. 35", "D. None of these"],
+        correctAnswer: 3 // D (Facebook allows more than these options)
+    },
+    {
+        question: "What is the output of the formula =concatenate(\"OLevel\",\"M1R5\")?",
+        options: ["A. OLevelM1R5", "B. OLevel M1R5", "C. M1 R5", "D. OLevel"],
+        correctAnswer: 0 // A (no space added)
+    },
+    {
+        question: "What does the letter 'P' stand for in the term of AEPS?",
+        options: ["A. Payment", "B. Processing", "C. Procurement", "D. Punching"],
+        correctAnswer: 0 // A (Aadhaar Enabled Payment System)
+    },
+    {
+        question: "RuPay debit card is similar to:",
+        options: ["A. Convenience Gift Card", "B. Bank Gift Card", "C. Suitable Gift Card", "D. None of the above"],
+        correctAnswer: 3 // D (similar to Visa/Mastercard)
+    },
+    {
+        question: "UIDAI comes under:",
+        options: ["A. Ministry of Electronics and Information Technology", "B. Niti Aayog", "C. Ministry of Statistics and Programme Implementation", "D. Home Ministry"],
+        correctAnswer: 0 // A
+    },
+    {
+        question: "The Facebook Lite is a:",
+        options: ["A. Thumbs up", "B. Thumbs down", "C. Hands up", "D. Hands down"],
+        correctAnswer: 0 // A (like button)
+    },
+    {
+        question: "Credit Cards are a convenient substitute for:",
+        options: ["A. Cash", "B. Cheque", "C. Both of the Above", "D. None of these"],
+        correctAnswer: 2 // C
+    },
+    {
+        question: "Which of the following feature is currently not present in AEPS?",
+        options: ["A. Cash Deposit", "B. Cash Withdrawal", "C. Balance Enquiry", "D. Virtual Card Creation"],
+        correctAnswer: 3 // D
+    },
+    {
+        question: "Credit Card is an essential component of:",
+        options: ["A. Electronic Commerce", "B. Internet Commerce", "C. Both of The Above", "D. None of The Above"],
+        correctAnswer: 2 // C
+    },
+    {
+        question: "What will be the output of the formula =COUNT(B1:B3)? Where B1=5, B2=4, B3=6.",
+        options: ["A. 15", "B. 3", "C. 4", "D. 5"],
+        correctAnswer: 1 // B (counts cells with numbers)
+    },
+    {
+        question: "USSD stands for:",
+        options: ["A. Unstructured Supplementary System Data", "B. Unstructured Supplementary Service Data", "C. Unstructured Supplementary Server Data", "D. None of The Above"],
+        correctAnswer: 1 // B
+    },
+    {
+        question: "Which bank launched First RuPay ATM & Micro ATM Card with Aadhaar Number?",
+        options: ["A. State Bank of India", "B. HDFC Bank", "C. Bank of India", "D. ICICI Bank"],
+        correctAnswer: 0 // A (SBI was among early adopters)
+    },
+    {
+        question: "Which key is used with the Control to create a new line or paragraph inside the cell of LibreOffice Calc?",
+        options: ["A. Enter", "B. TAB", "C. Alt", "D. Shift"],
+        correctAnswer: 2 // C (Ctrl+Alt+Enter for line break)
+    },
+    {
+        question: "In AEPS which of the following input determines the bank of the customer?",
+        options: ["A. IIN", "B. PIN"],
+        correctAnswer: 0 // A (IIN identifies the bank)
+    },
+    {
+        question: "IIN (Institution Identification Number) is a _________ digit number.",
+        options: ["A. 4", "B. 5", "C. 11", "D. 6"],
+        correctAnswer: 3 // D (6 digits in AEPS)
+    },
+    {
+        question: "In AEPS, specific ID and _________ are used for authentication purpose.",
+        options: ["A. Password", "B. PIN", "C. Biometric", "D. None of these"],
+        correctAnswer: 2 // C (Aadhaar biometric)
+    },
+    {
+        question: "Which operation is required to move a file or folder from one location to another?",
+        options: ["A. Copy followed by Paste", "B. Cut followed by Paste", "C. Move followed by Paste", "D. Change location"],
+        correctAnswer: 1 // B
+    },
+    {
+        question: "Alignment buttons are available on the toolbar in LibreOffice Impress.",
+        options: ["A. Formatting Toolbar", "B. Status bar", "C. Standard Toolbar", "D. None"],
+        correctAnswer: 0 // A
+    },
+    {
+        question: "WWW stands for:",
+        options: ["A. World Wide Wildlife Web", "B. World Wide Women's Web", "C. World Wide Web Worm", "D. World Wide Women's Week"],
+        correctAnswer: 2 // C (though technically "World Wide Web")
+    },
+    {
+        question: "FTP is used to:",
+        options: ["A. Transmit information on the web", "B. Send email messages between servers", "C. Upload/download data between computers", "D. Allow devices to request an IP address"],
+        correctAnswer: 2 // C
+    },
+    {
+        question: "Which function key is used as a Refresh button?",
+        options: ["A. F5", "B. F4", "C. F2", "D. F3"],
+        correctAnswer: 0 // A
     }
 ];
+
 
 
        const quizContainer = document.getElementById("quiz");

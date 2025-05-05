@@ -373,133 +373,506 @@
     <script>
 const questions = [
     {
-        question: "What was the name of the first electricity-powered computer?",
-        options: ["A. Pioneer-1", "B. Apple-1", "C. Mark-1", "D. Intel-1"],
-        correctAnswer: 2
+        question: "Which key is used for exit applications in LibreOffice writer?",
+        options: ["A. Ctrl+Q", "B. Ctrl+.", "C. Ctrl+L", "D. Ctrl+P"],
+        correctAnswer: 0 // A (Ctrl+Q)
     },
     {
-        question: "Which currency note has a security thread?",
-        options: ["A. Rs. 500/-", "B. Rs. 50/-", "C. Rs. 100/-", "D. All of these"],
-        correctAnswer: 3
+        question: "Main security of internet banking is:",
+        options: ["A. Password", "B. User name", "C. User address", "D. User mobile number"],
+        correctAnswer: 0 // A (Password)
     },
     {
-        question: "Which is not a component of Office Suite?",
-        options: ["A. Writer", "B. Base", "C. Internet Explorer", "D. Impress"],
-        correctAnswer: 2
+        question: "Full form of DFT is:",
+        options: ["A. Dynamic Financial Tools", "B. Digital Financial Tools", "C. Digital Funds Tools", "D. Double Finance tools"],
+        correctAnswer: 1 // B (Digital Financial Tools)
     },
     {
-        question: "What is the maximum amount that can be remitted by AEPS?",
-        options: ["A. 5000", "B. 50,000", "C. 1,00,000", "D. 10,000"],
-        correctAnswer: 1
+        question: "Which characteristic of computer distinguishes it from electronic calculators?",
+        options: ["A. Storage", "B. Versatility", "C. Accuracy", "D. Automatic"],
+        correctAnswer: 1 // B (Versatility)
     },
     {
-        question: "We can save LibreOffice Writer document in:",
-        options: ["A. XML", "B. DOC", "C. DOCX", "D. All of the above"],
-        correctAnswer: 3
+        question: "Included in Internet of Things:",
+        options: ["A. Software", "B. Sensors, actuators", "C. Wi-Fi Technique", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
     },
     {
-        question: "When the sender and receiver of an email are on the same system, we need only two:",
-        options: ["A. Email addresses", "B. Usernames", "C. Passwords", "D. None of the above"],
-        correctAnswer: 1
+        question: "To create a copy of files in the event of system failure:",
+        options: ["A. Restore file", "B. Backup", "C. Firewall", "D. Redundancy"],
+        correctAnswer: 1 // B (Backup)
     },
     {
-        question: "The first microcomputer in the world is:",
-        options: ["A. ALTAIR 8800", "B. HP", "C. ENIAC", "D. UNIVAC"],
-        correctAnswer: 0
+        question: "Which is the character encoding standard that provides a unique number to every character?",
+        options: ["A. Unicode", "B. ASCII", "C. ENIAC", "D. IBM"],
+        correctAnswer: 0 // A (Unicode)
     },
     {
-        question: "In LibreOffice Writer, in which menu is the mail merge option present?",
-        options: ["A. Servers", "B. Domain", "C. User Agents", "D. IP"],
-        correctAnswer: 0
+        question: "What type of telecommunications hardware allows you to access the web?",
+        options: ["A. Browser"],
+        correctAnswer: 0 // A (Browser)
     },
     {
-        question: "What is the full form of PIN?",
-        options: ["A. Personal Identification Number", "B. Permanent Identification Number", "C. Personal Identification Name", "D. None of the above"],
-        correctAnswer: 0
+        question: "TCP/IP errors such as connection problems can be identified using the command:",
+        options: ["A. FTP", "B. Ping", "C. POP3", "D. STP"],
+        correctAnswer: 1 // B (Ping)
     },
     {
-        question: "The language that the computer can understand and execute is called:",
-        options: ["A. Machine language", "B. Assembly language", "C. High-level language", "D. None of the above"],
-        correctAnswer: 0
+        question: "A program that runs in the background on your computer, sending information about your browsing habits to the company that installed it on your computer is called:",
+        options: ["A. Pop-ups", "B. Adware", "C. Grayware", "D. Spyware"],
+        correctAnswer: 3 // D (Spyware)
     },
     {
-        question: "An application can be opened through a shortcut on the desktop by:",
-        options: ["A. Double Click on its shortcut", "B. Right-clicking and choosing the open option", "C. Selecting the icon and pressing Enter key", "D. All of the above"],
-        correctAnswer: 3
+        question: "______ is not a type of broadband Internet connection.",
+        options: ["A. Satellite", "B. DSL", "C. 1024 MB", "D. 1024 TB"],
+        correctAnswer: 2 // C (1024 MB is a data size, not a connection type)
     },
     {
-        question: "What is the default font size in LibreOffice Writer?",
-        options: ["A. 7", "B. 12", "C. 13", "D. 16"],
-        correctAnswer: 1
+        question: "Which operating system reacts in real time?",
+        options: ["A. Batch System", "B. Quick Response System", "C. Real Time System", "D. Time Sharing System"],
+        correctAnswer: 2 // C (Real Time System)
     },
     {
-        question: "Work done on the internet is called:",
-        options: ["A. Gambling", "B. Surfing", "C. Both A and B", "D. None of these"],
-        correctAnswer: 1
+        question: "Which of the following is a single user operating system?",
+        options: ["A. Windows", "B. MAC", "C. MS-DOS", "D. None of these"],
+        correctAnswer: 2 // C (MS-DOS)
     },
     {
-        question: "Which of these areas is closest to AI?",
-        options: ["A. Wiring", "B. French", "C. Drawing", "D. Mathematics"],
-        correctAnswer: 3
+        question: "The blockchain is considered a type of:",
+        options: ["A. Payment Rail", "B. Payment Method", "C. Cable", "D. Dial up"],
+        correctAnswer: 0 // A (Payment Rail)
     },
     {
-        question: "In LibreOffice Calc, a formula starts with the symbol:",
-        options: ["A. =", "B. +", "C. &", "D. None of the above"],
-        correctAnswer: 0
+        question: "Gigabyte (GB) is equal to:",
+        options: ["A. 1024 Bytes", "B. 1024 KB", "C. None of the above", "D. 1024 MB"],
+        correctAnswer: 3 // D (1024 MB)
     },
     {
-        question: "What was the name of the first electricity-powered computer?",
-        options: ["A. Pioneer-1", "B. Apple-1", "C. Mark-1", "D. Intel-1"],
-        correctAnswer: 2
+        question: "Atal Pension Yojna is available to all those Indian citizens whose age is between:",
+        options: ["A. 40-60", "B. 18-40", "C. 25-60", "D. None"],
+        correctAnswer: 1 // B (18-40)
     },
     {
-        question: "Which currency note has a security thread?",
-        options: ["A. Rs. 500/-", "B. Rs. 50/-", "C. Rs. 100/-", "D. All of these"],
-        correctAnswer: 3
+        question: "Bank does not give loan against:",
+        options: ["A. Gold", "B. Assets", "C. Lottery", "D. None"],
+        correctAnswer: 2 // C (Lottery)
     },
     {
-        question: "Which is not a component of Office Suite?",
-        options: ["A. Writer", "B. Base", "C. Internet Explorer", "D. Impress"],
-        correctAnswer: 2
+        question: "Email address must have:",
+        options: ["A. @ sign", "B. $ sign", "C. # sign", "D. None"],
+        correctAnswer: 0 // A (@ sign)
     },
     {
-        question: "What is the maximum amount that can be remitted by AEPS?",
-        options: ["A. 5000", "B. 50,000", "C. 1,00,000", "D. 10,000"],
-        correctAnswer: 1
+        question: "The name of the open document is displayed in the:",
+        options: ["A. Title bar", "B. Status bar", "C. Standard Toolbar", "D. None of these"],
+        correctAnswer: 0 // A (Title bar)
     },
     {
-        question: "We can save LibreOffice Writer document in:",
-        options: ["A. XML", "B. DOC", "C. DOCX", "D. All of the above"],
-        correctAnswer: 3
+        question: "Which of the following organizations/agencies has sought an emergency fund of Rs. 100 crore from banks to tackle acute liquidity crisis?",
+        options: ["A. NABARD", "B. RBI", "C. Regional Rural & Cooperative Banks", "D. None of these"],
+        correctAnswer: 0 // A (NABARD)
     },
     {
-        question: "When the sender and receiver of an email are on the same system, we need only two:",
-        options: ["A. Email addresses", "B. Usernames", "C. Passwords", "D. None of the above"],
-        correctAnswer: 1
+        question: "Instagram is related to:",
+        options: ["A. Facebook", "B. Google", "C. Microsoft", "D. YouTube"],
+        correctAnswer: 0 // A (Facebook owns Instagram)
     },
     {
-        question: "The first microcomputer in the world is:",
-        options: ["A. ALTAIR 8800", "B. HP", "C. ENIAC", "D. UNIVAC"],
-        correctAnswer: 0
+        question: "The protocol used to retrieve email from a mailbox is:",
+        options: ["A. POP3", "B. SMTP", "C. HTTP", "D. None of the above"],
+        correctAnswer: 0 // A (POP3)
     },
     {
-        question: "In LibreOffice Writer, in which menu is the mail merge option present?",
-        options: ["A. Servers", "B. Domain", "C. User Agents", "D. IP"],
-        correctAnswer: 0
+        question: "What is the full form of P2P in blockchain?",
+        options: ["A. Peer to Peer", "B. Public to Private", "C. Product to Product", "D. None of the above"],
+        correctAnswer: 0 // A (Peer to Peer)
     },
     {
-        question: "What is the full form of PIN?",
-        options: ["A. Personal Identification Number", "B. Permanent Identification Number", "C. Personal Identification Name", "D. None of the above"],
-        correctAnswer: 0
+        question: "Which electronic mail are you more likely to use if you need to access your messages from more than one computer and location?",
+        options: ["A. IMAP", "B. SMTP", "C. POP3", "D. POP"],
+        correctAnswer: 0 // A (IMAP)
     },
     {
-        question: "POS means:",
-        options: ["A. Point of Sale", "B. Place of Sale", "C. Point of Sold", "D. None of these"],
-        correctAnswer: 0
+        question: "______ is a technology that allows telephone calls to be made over computer networks like the Internet.",
+        options: ["A. VOIP", "B. GSM", "C. MODEM", "D. CDMA"],
+        correctAnswer: 0 // A (VOIP)
+    },
+    {
+        question: "BIOS is used:",
+        options: ["A. By Operating System", "B. By Compiler", "C. By Interpreter", "D. By Application Software"],
+        correctAnswer: 0 // A (By Operating System)
+    },
+    {
+        question: "QR code is scanned by:",
+        options: ["A. Camera", "B. Network cable", "C. Sensor", "D. Computer"],
+        correctAnswer: 0 // A (Camera)
+    },
+    {
+        question: "In LibreOffice Impress, the bullet and numbering option is available in the:",
+        options: ["A. File", "B. Format", "C. View", "D. Insert"],
+        correctAnswer: 1 // B (Format)
+    },
+    {
+        question: "Cloud computing refers to applications and services that run on a distributed network using virtualized resources and accessed by common Internet protocols and networking standards:",
+        options: ["A. Cloud", "B. Distributed", "C. Soft", "D. Parallel"],
+        correctAnswer: 0 // A (Cloud)
+    },
+    {
+        question: "The Auxiliary storage memory is also known as:",
+        options: ["A. Secondary", "B. Primary", "C. Actual", "D. Accessible"],
+        correctAnswer: 0 // A (Secondary)
+    },
+    {
+        question: "In computers, a ______ is a symbolic representation of facts or concepts from which information may be obtained with a reasonable degree of confidence:",
+        options: ["A. Data", "B. Knowledge", "C. Program", "D. Algorithm"],
+        correctAnswer: 0 // A (Data)
+    },
+    {
+        question: "Cryptocurrency is:",
+        options: ["A. Plastic Money", "B. Digital Payment", "C. Digital Medium of Exchange", "D. Both A & B"],
+        correctAnswer: 2 // C (Digital Medium of Exchange)
+    },
+    {
+        question: "Who among the following is the primary regulator of banking business?",
+        options: ["A. Reserve Bank of India", "B. State Government", "C. Central Government", "D. None of these"],
+        correctAnswer: 0 // A (RBI)
+    },
+    {
+        question: "______ is an essential concept related to Cloud computing:",
+        options: ["A. Reliability", "B. Productivity", "C. Security", "D. None of these"],
+        correctAnswer: 2 // C (Security)
+    },
+    {
+        question: "Which of the following layer is an end-to-end layer?",
+        options: ["A. Data Link Layer", "B. Transport Layer", "C. Network Layer", "D. Physical Layer"],
+        correctAnswer: 1 // B (Transport Layer)
+    },
+    {
+        question: "USB is a device used to store data and it stands for:",
+        options: ["A. Unlimited Service Band", "B. Unlimited Serial Bus", "C. Universal Serial Bus", "D. Universal Service Bus"],
+        correctAnswer: 2 // C (Universal Serial Bus)
+    },
+    {
+        question: "What is the best way to create a uniform background image to all slides?",
+        options: ["A. By inserting image on all slides.", "B. Define background image into Slide Master.", "C. Insert image on First Slide.", "D. By copying image to all slides."],
+        correctAnswer: 1 // B (Slide Master)
+    },
+    {
+        question: "Which type of errors are first identified by the word processor?",
+        options: ["A. Spelling error", "B. Grammatically error", "C. Logical error", "D. None of these"],
+        correctAnswer: 0 // A (Spelling error)
+    },
+    {
+        question: "Which of the following is a painting and drawing device?",
+        options: ["A. Mouse", "B. Keyboard", "C. Joystick", "D. None"],
+        correctAnswer: 0 // A (Mouse)
+    },
+    {
+        question: "______ cannot be used to share internet with other users.",
+        options: ["A. Hotspot", "B. Wi-Fi", "C. USB", "D. Keyboard"],
+        correctAnswer: 3 // D (Keyboard)
+    },
+    {
+        question: "A program which is used to view websites is called a:",
+        options: ["A. Browser", "B. Web viewer", "C. Web server", "D. Internet"],
+        correctAnswer: 0 // A (Browser)
+    },
+    {
+        question: "The size of virtual memory is based on:",
+        options: ["A. ROM", "B. RAM", "C. Data bus", "D. Address bus"],
+        correctAnswer: 1 // B (RAM)
+    },
+    {
+        question: "Data in ______ bytes size is called Big Data:",
+        options: ["A. Tera", "B. Giga", "C. Peta", "D. Meta"],
+        correctAnswer: 2 // C (Peta)
+    },
+    {
+        question: "What is the full name of FAT?",
+        options: ["A. File attribute table", "B. File allocation table", "C. Font attribute table", "D. Format allocation table"],
+        correctAnswer: 1 // B (File allocation table)
+    },
+    {
+        question: "In LibreOffice writer, which of the following shortcut is used to Justify the document?",
+        options: ["A. Ctrl + J", "B. Ctrl + Z", "C. Ctrl + P", "D. Ctrl + 0"],
+        correctAnswer: 0 // A (Ctrl + J)
+    },
+    {
+        question: "Who created Bitcoin?",
+        options: ["A. Satoshi Nakamoto", "B. Samsung", "C. China", "D. John McAfee"],
+        correctAnswer: 0 // A (Satoshi Nakamoto)
+    },
+    {
+        question: "Which one is not an element of IoT?",
+        options: ["A. Security", "B. Process", "C. People", "D. Things"],
+        correctAnswer: 2 // C (People)
+    },
+    {
+        question: "Blog is a:",
+        options: ["A. Present article in reverse chronological order.", "B. Title of a book", "C. Special partition in web server.", "D. Name of a search engine."],
+        correctAnswer: 0 // A (Reverse chronological order)
+    },
+    {
+        question: "Key used for Align RIGHT of the text in LibreOffice writer:",
+        options: ["A. Ctrl + P", "B. Ctrl + R", "C. Ctrl + M", "D. Ctrl + 0"],
+        correctAnswer: 1 // B (Ctrl + R)
+    },
+    {
+        question: "Which of the following is not true about the NEFT (National Electronic Funds Transfer) System?",
+        options: ["A. There is no limit on transaction through NEFT", "B. NEFT operates on an hourly basis", "C. NEFT is a payment system which facilitates one to one fund transfer", "D. All of the above"],
+        correctAnswer: 0 // A (There are limits)
+    },
+    {
+        question: "In Linux, a user can load or upload:",
+        options: ["A. I/O Modules", "B. I/O Devices", "C. Kernel Modules", "D. File Base I/O"],
+        correctAnswer: 2 // C (Kernel Modules)
+    },
+    {
+        question: "Which of the following retains the information it's storing when the power of the system is turned off?",
+        options: ["A. CPU", "B. ROM", "C. RAM", "D. DIMM"],
+        correctAnswer: 1 // B (ROM)
+    },
+    {
+        question: "Cloud Services have a relationship with their customers:",
+        options: ["A. Many-to-Many", "B. One-to-Many", "C. One-to-One", "D. None of these"],
+        correctAnswer: 1 // B (One-to-Many)
+    },
+    {
+        question: "PNG refers to:",
+        options: ["A. Image file", "B. Movie/animation file", "C. Audio file", "D. MS Office document"],
+        correctAnswer: 0 // A (Image file)
+    },
+    {
+        question: "By whom was UPI launched?",
+        options: ["A. Urjit Patel", "B. R. Gandhi", "C. Raghuram Rajan", "D. Narendra Modi"],
+        correctAnswer: 3 // D (Narendra Modi)
+    },
+    {
+        question: "Which of the following is the most popular social networking site on the internet?",
+        options: ["A. My Space", "B. Orkut", "C. Facebook", "D. Friendster"],
+        correctAnswer: 2 // C (Facebook)
+    },
+    {
+        question: "The device connected to the Internet of Things has to communicate automatically, not via humans. What is this called?",
+        options: ["A. Bot-to-Bot (B2B)", "B. Machine-to-Machine (M2M)", "C. InterCloud", "D. Skynet"],
+        correctAnswer: 1 // B (M2M)
+    },
+    {
+        question: "Shortcut key to reach the last edit cell in LibreOffice Calc?",
+        options: ["A. Ctrl + Home", "B. Alt + Ctrl + 0", "C. Ctrl + End", "D. Ctrl + H"],
+        correctAnswer: 2 // C (Ctrl + End)
+    },
+    {
+        question: "What is the name of the new built-in browser included in Windows 10?",
+        options: ["A. Cortana", "B. Edge", "C. Opera", "D. Internet Explorer Pro"],
+        correctAnswer: 1 // B (Edge)
+    },
+    {
+        question: "AePS allows banking transactions:",
+        options: ["A. Balance enquiry", "B. Cash withdrawal", "C. Cash deposit", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What is a blockchain?",
+        options: ["A. A distributed ledger on a peer-to-peer network", "B. A type of Cryptocurrency", "C. An exchange", "D. A centralized ledger"],
+        correctAnswer: 0 // A (Distributed ledger)
+    },
+    {
+        question: "To change the cell reference C4:C9 to an absolute cell reference, you would enter it as:",
+        options: ["A. C4:C9", "B. C$4:C$9", "C. $C$4:$C$9", "D. None"],
+        correctAnswer: 2 // C ($C$4:$C$9)
+    },
+    {
+        question: "In order to access Internet banking, the customer needs:",
+        options: ["A. Customer ID and Password", "B. Customer name and password", "C. Customer ID and Date of Birth", "D. Customer ID and Phone number"],
+        correctAnswer: 0 // A (Customer ID and Password)
+    },
+    {
+        question: "To cut text from the document, press the keys:",
+        options: ["A. Ctrl + A", "B. Ctrl + C", "C. Ctrl + X", "D. Ctrl + K"],
+        correctAnswer: 2 // C (Ctrl + X)
+    },
+    {
+        question: "ODF means:",
+        options: ["A. Open Door Format", "B. Open Document Format", "C. Open Duplicate Format", "D. All of the above"],
+        correctAnswer: 1 // B (Open Document Format)
+    },
+    {
+        question: "To jump to the last slide in the slide show in Impress:",
+        options: ["A. Ctrl + E", "B. F7", "C. End", "D. Home"],
+        correctAnswer: 2 // C (End)
+    },
+    {
+        question: "Which of the following is considered the first web browser?",
+        options: ["A. Nexus", "B. Netscape Navigator", "C. Internet Explorer", "D. Mosaic"],
+        correctAnswer: 3 // D (Mosaic)
+    },
+    {
+        question: "Which of the following is a correct format of email address?",
+        options: ["A. name@website@info", "B. name@website.info", "C. www.nameofwebsite.com", "D. name.website.com"],
+        correctAnswer: 1 // B (name@website.info)
+    },
+    {
+        question: "What is the function of the control unit in the CPU?",
+        options: ["A. To transfer data to primary storage", "B. To store program instructions", "C. To perform logic functions", "D. To decode program instructions"],
+        correctAnswer: 3 // D (Decode instructions)
+    },
+    {
+        question: "RAM means:",
+        options: ["A. Random Access Memory", "B. Read Also Memory", "C. Read Access Memory", "D. Random Also Memory"],
+        correctAnswer: 0 // A (Random Access Memory)
+    },
+    {
+        question: "The term Operating System means:",
+        options: ["A. A set of programs which controls the working of a computer", "B. The way a computer operator works", "C. A type of software", "D. None of the above"],
+        correctAnswer: 0 // A (Controls computer working)
+    },
+    {
+        question: "Which of the following is not a type of broadband Internet connection?",
+        options: ["A. DSL", "B. Fiber Optic", "C. Dial-up", "D. Satellite"],
+        correctAnswer: 2 // C (Dial-up)
+    },
+    {
+        question: "Which of the following is a type of malware?",
+        options: ["A. Virus", "B. Worm", "C. Trojan Horse", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What does the acronym HTTP stand for?",
+        options: ["A. HyperText Transfer Protocol", "B. HyperText Transmission Protocol", "C. HyperText Transport Protocol", "D. HyperText Transfer Process"],
+        correctAnswer: 0 // A (HyperText Transfer Protocol)
+    },
+    {
+        question: "Which of the following is a cloud storage service?",
+        options: ["A. Google Drive", "B. Microsoft Word", "C. Adobe Photoshop", "D. VLC Media Player"],
+        correctAnswer: 0 // A (Google Drive)
+    },
+    {
+        question: "What is the primary function of an operating system?",
+        options: ["A. To manage hardware resources", "B. To provide security", "C. To run applications", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "Which of the following is a common file format for images?",
+        options: ["A. JPEG", "B. DOCX", "C. MP3", "D. PDF"],
+        correctAnswer: 0 // A (JPEG)
+    },
+    {
+        question: "What is the purpose of a firewall?",
+        options: ["A. To speed up internet connection", "B. To protect a network from unauthorized access", "C. To store data", "D. To manage network traffic"],
+        correctAnswer: 1 // B (Protect from unauthorized access)
+    },
+    {
+        question: "Which of the following is a type of computer memory?",
+        options: ["A. RAM", "B. ROM", "C. Cache", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What does the acronym URL stand for?",
+        options: ["A. Uniform Resource Locator", "B. Universal Resource Locator", "C. Uniform Reference Locator", "D. Universal Reference Locator"],
+        correctAnswer: 0 // A (Uniform Resource Locator)
+    },
+    {
+        question: "Which of the following is a type of software?",
+        options: ["A. System Software", "B. Application Software", "C. Utility Software", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What is the main function of a CPU?",
+        options: ["A. To store data", "B. To process instructions", "C. To connect to the internet", "D. To display graphics"],
+        correctAnswer: 1 // B (Process instructions)
+    },
+    {
+        question: "Which of the following is an example of an input device?",
+        options: ["A. Monitor", "B. Keyboard", "C. Printer", "D. Speaker"],
+        correctAnswer: 1 // B (Keyboard)
+    },
+    {
+        question: "What is the primary purpose of an operating system?",
+        options: ["A. To manage computer hardware and software resources", "B. To provide a user interface", "C. To execute applications", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "Which of the following is a type of network topology?",
+        options: ["A. Star", "B. Ring", "C. Bus", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What is the function of a router?",
+        options: ["A. To connect different networks", "B. To amplify signals", "C. To store data", "D. To provide security"],
+        correctAnswer: 0 // A (Connect networks)
+    },
+    {
+        question: "Which of the following is a type of database?",
+        options: ["A. Relational Database", "B. Object-oriented Database", "C. NoSQL Database", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What does the acronym VPN stand for?",
+        options: ["A. Virtual Private Network", "B. Virtual Public Network", "C. Verified Private Network", "D. Verified Public Network"],
+        correctAnswer: 0 // A (Virtual Private Network)
+    },
+    {
+        question: "Which of the following is a common web browser?",
+        options: ["A. Google Chrome", "B. Microsoft Word", "C. Adobe Reader", "D. VLC Media Player"],
+        correctAnswer: 0 // A (Google Chrome)
+    },
+    {
+        question: "What is the purpose of an antivirus program?",
+        options: ["A. To speed up the computer", "B. To protect against malware", "C. To manage files", "D. To enhance graphics"],
+        correctAnswer: 1 // B (Protect against malware)
+    },
+    {
+        question: "Which of the following is a type of cloud computing service?",
+        options: ["A. IaaS", "B. PaaS", "C. SaaS", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What is the main function of a hard drive?",
+        options: ["A. To process data", "B. To store data", "C. To display data", "D. To input data"],
+        correctAnswer: 1 // B (Store data)
+    },
+    {
+        question: "Which of the following is a programming language?",
+        options: ["A. HTML", "B. CSS", "C. JavaScript", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What does the acronym AI stand for?",
+        options: ["A. Artificial Intelligence", "B. Automated Interface", "C. Advanced Integration", "D. None of the above"],
+        correctAnswer: 0 // A (Artificial Intelligence)
+    },
+    {
+        question: "Which of the following is a type of malware?",
+        options: ["A. Virus", "B. Worm", "C. Trojan Horse", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What is the purpose of a backup?",
+        options: ["A. To speed up the computer", "B. To create a copy of data for recovery", "C. To enhance performance", "D. To manage files"],
+        correctAnswer: 1 // B (Data recovery)
+    },
+    {
+        question: "Which of the following is a type of software license?",
+        options: ["A. Freeware", "B. Shareware", "C. Open Source", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What does the acronym IoT stand for?",
+        options: ["A. Internet of Things", "B. Internet of Technology", "C. Internet of Transactions", "D. None of the above"],
+        correctAnswer: 0 // A (Internet of Things)
+    },
+    {
+        question: "Which of the following is a type of web server?",
+        options: ["A. Apache", "B. Nginx", "C. Microsoft IIS", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
+    },
+    {
+        question: "What is the primary function of a database management system (DBMS)?",
+        options: ["A. To manage data storage", "B. To provide data security", "C. To facilitate data retrieval", "D. All of the above"],
+        correctAnswer: 3 // D (All of the above)
     }
 ];
-
-
        const quizContainer = document.getElementById("quiz");
         const resultContainer = document.getElementById("result");
         const progressBar = document.getElementById("progress");
