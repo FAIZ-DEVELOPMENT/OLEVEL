@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        nav {
+            background-color: var(--primary-color);
+            width: 100%;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 100%; /* Allow full width on small screens */
+        }
+
+        .sidebar {
+            width: 300px;
+            background: #fcfdff;
+            color: rgb(27, 27, 27);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 50px 50px 50px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 0px;
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .quiz-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .question-container {
+            border: 2px solid #888888;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .question-container:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .option {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .option:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.0);
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .button {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #003d80;
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option:active {
+            transform: scale(0.98);
+        }
+
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #0056b3;
+            border-radius: 15px;
+            background-color: #f8f8f8;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .result-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .result-text {
+            float: right; /* Align to the right */
+            margin-left: 10px; /* Add spacing */
+            font-weight: bold; /* Make it bold */
+        }
+
+        .question-result {
+            margin-bottom: 15px;
+        }
+
+        .question-result.correct {
+            color: green;
+        }
+
+        .question-result.incorrect {
+            color: red;
+        }
+
+        .grade {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #0056b3;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 1200px){
+            .sidebar{
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+              display: none;
+            }
+
+            .container {
+                margin: 20px; /* Reduce margin on small screens */
+            }
+
+            .quiz-title {
+                font-size: 24px; /* Adjust font size */
+            }
+
+            .option {
+                font-size: 16px; /* Adjust option font size */
+            }
+
+            .result-title {
+                font-size: 20px; /* Adjust result title font size */
+            }
+
+            .grade {
+                font-size: 18px; /* Adjust grade font size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quiz-title {
+                font-size: 20px; /* Further adjust font size */
+            }
+
+            .option {
+                font-size: 14px; /* Further adjust option font size */
+            }
+
+            .button {
+                padding: 10px; /* Adjust button padding */
+                font-size: 14px; /* Adjust button font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="Nielet.html">O Level</a>
+                    <a href="ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Shortcut Keys</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">O Level</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
+                    <a href="#">Internet Of things</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    
+                    <a href=".html">M1-R5</a>
+                    <a href="htmlcompiler.html">M2-R5</a>
+                    <a href="pythoncompiler.html">M3-R5</a>
+                    <a href="ccompiler.html">M4-R5</a>
+                    <a href="practicalportal.html">More....</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Quiz Container -->
+    <div class="container">
+        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 1</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <button class="button" id="submitBtn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+
+        <!-- Buttons for showing Correct and Incorrect answers -->
+        <button class="button" id="showCorrectBtn" onclick="showCorrectAnswers()" style="display:none;">Show Correct Answers</button>
+        <button class="button" id="showIncorrectBtn" onclick="showIncorrectAnswers()" style="display:none;">Show Incorrect Answers</button>
+
+        <div id="result" class="result-container" style="display: none;">
+            <div class="result-title">Quiz Results</div>
+            <div class="result-item" id="totalMarks"></div>
+            <div class="result-item" id="correctAnswers"></div>
+            <div class="result-item" id="wrongAnswers"></div>
+            <div class="result-item" id="attemptedQuestions"></div>
+            <div class="result-item" id="grade"></div>
+            <div class="result-item" id="questionResults"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>Useful Links</h2>
+        <a href="https://example.com" target="_blank">Study Materials</a><hr>
+        <a href="https://example.com" target="_blank">Practice Tests</a><hr>
+        <a href="https://example.com" target="_blank">Video Tutorials</a><hr>
+        <a href="https://example.com" target="_blank">Feedback Form</a><hr>
+    </div>
+
+    <script>
+const questions = [
+    {
+        question: "The combination of the column letter and row number for a cell in a Calc spreadsheet is called:",
+        options: ["A. Cell across", "B. Cell identification number", "C. Cell reference", "D. Cell identify"],
+        correctAnswer: 2
+    },
+    {
+        question: "What is the maximum font size available in the font size drop-down in LibreOffice Writer?",
+        options: ["A. 72", "B. 96", "C. 98", "D. 92"],
+        correctAnswer: 1
+    },
+    {
+        question: "What will result from adding A1+A2 in Calc?",
+        options: ["A. ###", "B. 5", "C. 1", "D. 0"],
+        correctAnswer: 1
+    },
+    {
+        question: "In LibreOffice Calc, each sheet can have a maximum of rows:",
+        options: ["A. 102424", "B. 1,048,576", "C. 32767", "D. 41256"],
+        correctAnswer: 1
+    },
+    {
+        question: "What are the benefits of Antivirus?",
+        options: ["A. It increases the RAM of our computer", "B. It protects the computer from viruses", "C. It is a type of application Program", "D. None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "The printer that is cheapest in terms of price and operating cost is:",
+        options: ["A. Inkjet", "B. Laser", "C. Thermal", "D. Dot Matrix"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following memory is used to store BIOS on the Motherboard?",
+        options: ["A. ROM", "B. RAM", "C. Cache", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "The Digital Computer was first developed in:",
+        options: ["A. China", "B. UK", "C. USA", "D. Japan"],
+        correctAnswer: 2
+    },
+    {
+        question: "Select from which is odd:",
+        options: ["A. Operating System", "B. Interpreter", "C. Assembler", "D. Compiler"],
+        correctAnswer: 0
+    },
+    {
+        question: "Coins are issued by:",
+        options: ["A. Government of India", "B. NABARD", "C. Public Sector Banks", "D. State Bank of India"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is RuPay Debit Card?",
+        options: ["A. Domestic debit card", "B. Introduced by National Payments Corporation of India", "C. Accepted at all ATMs & PoS machines", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "The shortcut key is used for new style in LibreOffice Writer:",
+        options: ["A. Shift + F11", "B. Shift + F10", "C. Shift + F12", "D. Shift + F8"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the full form of ENIAC?",
+        options: ["A. Electronic Numerical Integrator and Computer", "B. Electronic Networked Integrated Automatic Calculator", "C. Electronic Numerical Integrated Automatic Calculator", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the maximum amount that can be remitted by AEPS?",
+        options: ["A. 5000", "B. 50,000", "C. 1,00,000", "D. 10,000"],
+        correctAnswer: 1
+    },
+    {
+        question: "We can save LibreOffice Writer document in:",
+        options: ["A. XML", "B. DOC", "C. DOCX", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "When sender and receiver of an email are on the same system, we need only two:",
+        options: ["A. Email addresses", "B. Usernames", "C. Passwords", "D. None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "The first microcomputer in the world is:",
+        options: ["A. ALTAIR 8800", "B. HP", "C. ENIAC", "D. UNIVAC"],
+        correctAnswer: 0
+    },
+    {
+        question: "In LibreOffice Writer, in which menu is the mail merge option present?",
+        options: ["A. Servers", "B. Domain", "C. User Agents", "D. IP"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the full form of PIN?",
+        options: ["A. Personal Identification Number", "B. Permanent Identification Number", "C. Personal Identification Name", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "The language that the computer can understand and execute is called:",
+        options: ["A. Machine language", "B. Assembly language", "C. High-level language", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "An application can be opened through a shortcut on the desktop by:",
+        options: ["A. Double Click on its shortcut", "B. Right-clicking and choosing the open option", "C. Selecting the icon and pressing Enter key", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the default font size in LibreOffice Writer?",
+        options: ["A. 7", "B. 12", "C. 13", "D. 16"],
+        correctAnswer: 1
+    },
+    {
+        question: "Work done on the internet is called:",
+        options: ["A. Gambling", "B. Surfing", "C. Both A and B", "D. None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of these areas is closest to AI?",
+        options: ["A. Wiring", "B. French", "C. Drawing", "D. Mathematics"],
+        correctAnswer: 3
+    },
+    {
+        question: "In LibreOffice Calc, a formula starts with the symbol:",
+        options: ["A. =", "B. +", "C. &", "D. None of the above"],
+        correctAnswer: 0
+    }
+];
+
+
+       const quizContainer = document.getElementById("quiz");
+        const resultContainer = document.getElementById("result");
+        const progressBar = document.getElementById("progress");
+        let answeredQuestions = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        const userAnswers = new Array(questions.length).fill(null); // Track user answers
+
+        // Create the quiz HTML
+        function generateQuiz() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question-container");
+
+                const questionTitle = document.createElement("div");
+                questionTitle.classList.add("question");
+                questionTitle.innerText = `${index + 1}. ${q.question}`;
+                questionDiv.appendChild(questionTitle);
+
+                const optionsList = document.createElement("div");
+                optionsList.classList.add("options-container");
+
+                q.options.forEach((option, i) => {
+                    const optionItem = document.createElement("div");
+                    optionItem.classList.add("option");
+                    optionItem.innerText = option;
+                    optionItem.addEventListener("click", () => checkAnswer(index, i, optionItem));
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionDiv.appendChild(optionsList);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Check the answer
+        function checkAnswer(questionIndex, selectedOptionIndex, selectedElement) {
+            const question = questions[questionIndex];
+
+            if (userAnswers[questionIndex] === null) {
+                userAnswers[questionIndex] = selectedOptionIndex;
+
+                // Create a span element to display "Correct" or "Incorrect"
+                const resultSpan = document.createElement("span");
+                resultSpan.classList.add("result-text"); // Add a class for styling
+                resultSpan.style.float = "right"; // Align to the right
+                resultSpan.style.marginLeft = "10px"; // Add spacing
+                resultSpan.style.fontWeight = "bold"; // Make it bold
+
+                if (selectedOptionIndex === question.correctAnswer) {
+                    correctAnswers++;
+                    resultSpan.innerText = "✅ Correct"; // Add "Correct" text
+                    resultSpan.style.color = "green"; // Green color for correct
+                    selectedElement.classList.add("correct");
+                } else {
+                    wrongAnswers++;
+                    resultSpan.innerText = "❌ Incorrect"; // Add "Incorrect" text
+                    resultSpan.style.color = "red"; // Red color for incorrect
+                    selectedElement.classList.add("incorrect");
+
+                    // Show correct answer immediately for wrong selections
+                    const correctOptionIndex = question.correctAnswer;
+                    const optionsContainer = selectedElement.parentElement;
+                    const correctOptionElement = optionsContainer.children[correctOptionIndex];
+
+                    // Add "Correct" to the correct option
+                    const correctSpan = document.createElement("span");
+                    correctSpan.classList.add("result-text");
+                    correctSpan.innerText = "✅ Correct";
+                    correctSpan.style.float = "right";
+                    correctSpan.style.marginLeft = "10px";
+                    correctSpan.style.color = "green";
+                    correctSpan.style.fontWeight = "bold";
+                    correctOptionElement.appendChild(correctSpan);
+                    correctOptionElement.classList.add("correct");
+                }
+
+                // Append the result span to the selected option
+                selectedElement.appendChild(resultSpan);
+            }
+
+            // Disable further clicks on options
+            const options = selectedElement.parentElement.children;
+            Array.from(options).forEach(option => option.style.pointerEvents = 'none');
+
+            answeredQuestions++;
+            updateProgressBar();
+            toggleSubmitButton();
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = (answeredQuestions / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Enable/Disable the submit button
+        function toggleSubmitButton() {
+            const submitButton = document.getElementById('submitBtn');
+            if (answeredQuestions === questions.length) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const totalMarks = correctAnswers;
+            const attemptedQuestions = answeredQuestions;
+
+            document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks}`;
+            document.getElementById('correctAnswers').innerText = `Correct Answers: ${correctAnswers}`;
+            document.getElementById('wrongAnswers').innerText = `Wrong Answers: ${wrongAnswers}`;
+            document.getElementById('attemptedQuestions').innerText = `Attempted Questions: ${attemptedQuestions}`;
+            // Calculate Grade
+            let grade = '';
+            const percentage = (correctAnswers / questions.length) * 100;
+            if (percentage >= 90) grade = 'A';
+            else if (percentage >= 75) grade = 'B';
+            else if (percentage >= 50) grade = 'C';
+            else grade = 'F';
+            document.getElementById('grade').innerText = `Grade: ${grade}`;
+
+            // Display which questions were correct and which were wrong
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Question-wise Results:</strong>";
+            questions.forEach((q, index) => {
+                const resultDiv = document.createElement("div");
+                resultDiv.classList.add("question-result");
+                if (userAnswers[index] === q.correctAnswer) {
+                    resultDiv.classList.add("correct");
+                    resultDiv.innerText = `${index + 1}. Correct: ${q.question}`;
+                } else {
+                    resultDiv.classList.add("incorrect");
+                    resultDiv.innerText = `${index + 1}. Incorrect: ${q.question} (Correct Answer: ${q.options[q.correctAnswer]})`;
+                }
+                questionResults.appendChild(resultDiv);
+            });
+
+            // Show the "Show Correct/Incorrect" buttons
+            document.getElementById("showCorrectBtn").style.display = 'block';
+            document.getElementById("showIncorrectBtn").style.display = 'block';
+
+            resultContainer.style.display = 'block';
+        }
+
+        // Show Correct Answers
+        function showCorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Correct Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "correct");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Correct: ${q.options[q.correctAnswer]}`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Show Incorrect Answers
+        function showIncorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Incorrect Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] !== q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "incorrect");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Incorrect: ${q.options[userAnswers[index]]} (Correct: ${q.options[q.correctAnswer]})`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Initialize the quiz
+        generateQuiz();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const closeButton = document.getElementById('close-button');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.add('active');
+                closeButton.style.display = 'block';
+                mobileMenu.style.display = 'none';
+            });
+
+            // Close mobile menu
+            closeButton.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                closeButton.style.display = 'none';
+                mobileMenu.style.display = 'flex';
+                
+                // Close all dropdowns when closing the menu
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+
+            // Toggle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns when opening one
+                        if (dropdown.classList.contains('active')) {
+                            dropdowns.forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    if (!navLinks.contains(e.target) && 
+                        !mobileMenu.contains(e.target) && 
+                        !closeButton.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        closeButton.style.display = 'none';
+                        mobileMenu.style.display = 'flex';
+                        
+                        // Close all dropdowns
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+        });
+       
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault(); // Prevent default link behavior
+        const parent = link.parentElement;
+        parent.classList.toggle('open');
+    });
+});
+
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+
+         const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const closeButton = document.getElementById('close-button');
+
+        // Add event listener for the mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Check if the nav links are active
+            if (navLinks.classList.contains('active')) {
+                closeButton.style.display = 'block'; // Show close button
+                mobileMenu.style.display = 'none'; // Hide mobile menu toggle button
+            } else {
+                closeButton.style.display = 'none'; // Hide close button
+                mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+            }
+        });
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+    </script>
+
+</body>
+</html>

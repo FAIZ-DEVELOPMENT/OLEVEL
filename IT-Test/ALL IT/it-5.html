@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        nav {
+            background-color: var(--primary-color);
+            width: 100%;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 100%; /* Allow full width on small screens */
+        }
+
+        .sidebar {
+            width: 300px;
+            background: #fcfdff;
+            color: rgb(27, 27, 27);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 50px 50px 50px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 0px;
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .quiz-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .question-container {
+            border: 2px solid #888888;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .question-container:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .option {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .option:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.0);
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .button {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #003d80;
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option:active {
+            transform: scale(0.98);
+        }
+
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #0056b3;
+            border-radius: 15px;
+            background-color: #f8f8f8;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .result-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .result-text {
+            float: right; /* Align to the right */
+            margin-left: 10px; /* Add spacing */
+            font-weight: bold; /* Make it bold */
+        }
+
+        .question-result {
+            margin-bottom: 15px;
+        }
+
+        .question-result.correct {
+            color: green;
+        }
+
+        .question-result.incorrect {
+            color: red;
+        }
+
+        .grade {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #0056b3;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 1200px){
+            .sidebar{
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+              display: none;
+            }
+
+            .container {
+                margin: 20px; /* Reduce margin on small screens */
+            }
+
+            .quiz-title {
+                font-size: 24px; /* Adjust font size */
+            }
+
+            .option {
+                font-size: 16px; /* Adjust option font size */
+            }
+
+            .result-title {
+                font-size: 20px; /* Adjust result title font size */
+            }
+
+            .grade {
+                font-size: 18px; /* Adjust grade font size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quiz-title {
+                font-size: 20px; /* Further adjust font size */
+            }
+
+            .option {
+                font-size: 14px; /* Further adjust option font size */
+            }
+
+            .button {
+                padding: 10px; /* Adjust button padding */
+                font-size: 14px; /* Adjust button font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="Nielet.html">O Level</a>
+                    <a href="ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Shortcut Keys</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">O Level</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
+                    <a href="#">Internet Of things</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    
+                    <a href=".html">M1-R5</a>
+                    <a href="htmlcompiler.html">M2-R5</a>
+                    <a href="pythoncompiler.html">M3-R5</a>
+                    <a href="ccompiler.html">M4-R5</a>
+                    <a href="practicalportal.html">More....</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Quiz Container -->
+    <div class="container">
+        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 1</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <button class="button" id="submitBtn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+
+        <!-- Buttons for showing Correct and Incorrect answers -->
+        <button class="button" id="showCorrectBtn" onclick="showCorrectAnswers()" style="display:none;">Show Correct Answers</button>
+        <button class="button" id="showIncorrectBtn" onclick="showIncorrectAnswers()" style="display:none;">Show Incorrect Answers</button>
+
+        <div id="result" class="result-container" style="display: none;">
+            <div class="result-title">Quiz Results</div>
+            <div class="result-item" id="totalMarks"></div>
+            <div class="result-item" id="correctAnswers"></div>
+            <div class="result-item" id="wrongAnswers"></div>
+            <div class="result-item" id="attemptedQuestions"></div>
+            <div class="result-item" id="grade"></div>
+            <div class="result-item" id="questionResults"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>Useful Links</h2>
+        <a href="https://example.com" target="_blank">Study Materials</a><hr>
+        <a href="https://example.com" target="_blank">Practice Tests</a><hr>
+        <a href="https://example.com" target="_blank">Video Tutorials</a><hr>
+        <a href="https://example.com" target="_blank">Feedback Form</a><hr>
+    </div>
+
+    <script>
+ const questions = [
+    {
+        question: "A Pixel is",
+        options: ["A) A computer program that draws picture", "B) A picture stored in secondary memory", "C) The smallest resolvable part of a picture", "D) None of these"],
+        correctAnswer: 2
+    },
+    {
+        question: "Android version 7 is called",
+        options: ["A) Lollipop", "B) Marshmallow", "C) Nougat", "D) Oreo"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following memories is used in Digital Camera?",
+        options: ["A) Virtual Memory", "B) Flash Memory", "C) Main Memory", "D) Cache Memory"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following structure is followed by a USB Device?",
+        options: ["A) List", "B) Tree", "C) Hash", "D) Huffman"],
+        correctAnswer: 1
+    },
+    {
+        question: "Flash Memory is a type of Memory",
+        options: ["A) Primary", "B) RAM", "C) Secondary", "D) All of these"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following memory types cannot store the data or information permanently?",
+        options: ["A) Cache", "B) RAM", "C) Flash Memory", "D) Hard disk"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which components of a computer connects the processor to the other hardware?",
+        options: ["A) System Bus", "B) CPU", "C) Memory", "D) Input unit"],
+        correctAnswer: 0
+    },
+    {
+        question: "The performance of cache Memory is frequently measured in terms of a quantity called",
+        options: ["A) Bit Ratio", "B) Nor Ratio", "C) No Ratio", "D) Hit Ratio"],
+        correctAnswer: 3
+    },
+    {
+        question: "Memory is made up of",
+        options: ["A) Set of wires", "B) Set of circuits", "C) Large number of cells", "D) All of these"],
+        correctAnswer: 2
+    },
+    {
+        question: "The three sequential function of CPU operations are",
+        options: ["A) Decode, fetch, execute", "B) Execute, decode, fetch", "C) Fetch, Execute, decode", "D) Fetch, decode, execute"],
+        correctAnswer: 3
+    },
+    {
+        question: "The process of manipulating the data to achieve some meaningful results is called",
+        options: ["A) Data Processing", "B) Information handling", "C) Data sharing", "D) Data distribution"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the Process id of init?",
+        options: ["A) 2", "B) 4", "C) 1", "D) 6"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is the Name of a Linux Kernel file?",
+        options: ["A) Vmlinux", "B) Vmlinuz", "C) Lynx", "D) Linux"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following Directories does not contain binary files?",
+        options: ["A) /boot", "B) /etc", "C) /bin", "D) /sbin"],
+        correctAnswer: 1
+    },
+    {
+        question: "What of the following options is used to connect a Windows 10 computer to a Printer?",
+        options: ["A) Bluetooth and other Device", "B) Printer", "C) Printers and Scanners", "D) Scanners"],
+        correctAnswer: 2
+    },
+    {
+        question: "What of the following formats can not be included in LibreOffice?",
+        options: ["A) Html", "B) Exml", "C) Xml", "D) Bip"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which command is used to print in Linux?",
+        options: ["A) Mv", "B) cp", "C) lpr", "D) pt"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is available without any payment?",
+        options: ["A) Freeware", "B) Free software", "C) OSS", "D) FLOSS"],
+        correctAnswer: 1
+    },
+    {
+        question: "In any shell script the first line starts with which of the following?",
+        options: ["A) !", "B) @", "C) $", "D) #"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which is the shortcut key to open 'File Explorer' in Windows 10?",
+        options: ["A) Window key + A", "B) Window key + F", "C) Window key + E", "D) Window key + D"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which command gives you information about how much disk space each file in the current directory uses?",
+        options: ["A) ls -1", "B) ls -la", "C) du", "D) ls -a"],
+        correctAnswer: 2
+    },
+    {
+        question: "Process or task in Linux is represented by?",
+        options: ["A) task build", "B) task struct", "C) task construct", "D) task domain"],
+        correctAnswer: 1
+    },
+    {
+        question: "What is the maximum filename size in Linux in bytes?",
+        options: ["A) 32", "B) 64", "C) 126", "D) 255"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which command is used to check Linux version?",
+        options: ["A) uname -a", "B) uname -n", "C) uname -s", "D) Kernel"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which command is used to create a file in Linux?",
+        options: ["A) cat", "B) touch", "C) echo", "D) All of the above"],
+        correctAnswer: 1
+    }
+];
+
+       const quizContainer = document.getElementById("quiz");
+        const resultContainer = document.getElementById("result");
+        const progressBar = document.getElementById("progress");
+        let answeredQuestions = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        const userAnswers = new Array(questions.length).fill(null); // Track user answers
+
+        // Create the quiz HTML
+        function generateQuiz() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question-container");
+
+                const questionTitle = document.createElement("div");
+                questionTitle.classList.add("question");
+                questionTitle.innerText = `${index + 1}. ${q.question}`;
+                questionDiv.appendChild(questionTitle);
+
+                const optionsList = document.createElement("div");
+                optionsList.classList.add("options-container");
+
+                q.options.forEach((option, i) => {
+                    const optionItem = document.createElement("div");
+                    optionItem.classList.add("option");
+                    optionItem.innerText = option;
+                    optionItem.addEventListener("click", () => checkAnswer(index, i, optionItem));
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionDiv.appendChild(optionsList);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Check the answer
+        function checkAnswer(questionIndex, selectedOptionIndex, selectedElement) {
+            const question = questions[questionIndex];
+
+            if (userAnswers[questionIndex] === null) {
+                userAnswers[questionIndex] = selectedOptionIndex;
+
+                // Create a span element to display "Correct" or "Incorrect"
+                const resultSpan = document.createElement("span");
+                resultSpan.classList.add("result-text"); // Add a class for styling
+                resultSpan.style.float = "right"; // Align to the right
+                resultSpan.style.marginLeft = "10px"; // Add spacing
+                resultSpan.style.fontWeight = "bold"; // Make it bold
+
+                if (selectedOptionIndex === question.correctAnswer) {
+                    correctAnswers++;
+                    resultSpan.innerText = "✅ Correct"; // Add "Correct" text
+                    resultSpan.style.color = "green"; // Green color for correct
+                    selectedElement.classList.add("correct");
+                } else {
+                    wrongAnswers++;
+                    resultSpan.innerText = "❌ Incorrect"; // Add "Incorrect" text
+                    resultSpan.style.color = "red"; // Red color for incorrect
+                    selectedElement.classList.add("incorrect");
+
+                    // Show correct answer immediately for wrong selections
+                    const correctOptionIndex = question.correctAnswer;
+                    const optionsContainer = selectedElement.parentElement;
+                    const correctOptionElement = optionsContainer.children[correctOptionIndex];
+
+                    // Add "Correct" to the correct option
+                    const correctSpan = document.createElement("span");
+                    correctSpan.classList.add("result-text");
+                    correctSpan.innerText = "✅ Correct";
+                    correctSpan.style.float = "right";
+                    correctSpan.style.marginLeft = "10px";
+                    correctSpan.style.color = "green";
+                    correctSpan.style.fontWeight = "bold";
+                    correctOptionElement.appendChild(correctSpan);
+                    correctOptionElement.classList.add("correct");
+                }
+
+                // Append the result span to the selected option
+                selectedElement.appendChild(resultSpan);
+            }
+
+            // Disable further clicks on options
+            const options = selectedElement.parentElement.children;
+            Array.from(options).forEach(option => option.style.pointerEvents = 'none');
+
+            answeredQuestions++;
+            updateProgressBar();
+            toggleSubmitButton();
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = (answeredQuestions / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Enable/Disable the submit button
+        function toggleSubmitButton() {
+            const submitButton = document.getElementById('submitBtn');
+            if (answeredQuestions === questions.length) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const totalMarks = correctAnswers;
+            const attemptedQuestions = answeredQuestions;
+
+            document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks}`;
+            document.getElementById('correctAnswers').innerText = `Correct Answers: ${correctAnswers}`;
+            document.getElementById('wrongAnswers').innerText = `Wrong Answers: ${wrongAnswers}`;
+            document.getElementById('attemptedQuestions').innerText = `Attempted Questions: ${attemptedQuestions}`;
+            // Calculate Grade
+            let grade = '';
+            const percentage = (correctAnswers / questions.length) * 100;
+            if (percentage >= 90) grade = 'A';
+            else if (percentage >= 75) grade = 'B';
+            else if (percentage >= 50) grade = 'C';
+            else grade = 'F';
+            document.getElementById('grade').innerText = `Grade: ${grade}`;
+
+            // Display which questions were correct and which were wrong
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Question-wise Results:</strong>";
+            questions.forEach((q, index) => {
+                const resultDiv = document.createElement("div");
+                resultDiv.classList.add("question-result");
+                if (userAnswers[index] === q.correctAnswer) {
+                    resultDiv.classList.add("correct");
+                    resultDiv.innerText = `${index + 1}. Correct: ${q.question}`;
+                } else {
+                    resultDiv.classList.add("incorrect");
+                    resultDiv.innerText = `${index + 1}. Incorrect: ${q.question} (Correct Answer: ${q.options[q.correctAnswer]})`;
+                }
+                questionResults.appendChild(resultDiv);
+            });
+
+            // Show the "Show Correct/Incorrect" buttons
+            document.getElementById("showCorrectBtn").style.display = 'block';
+            document.getElementById("showIncorrectBtn").style.display = 'block';
+
+            resultContainer.style.display = 'block';
+        }
+
+        // Show Correct Answers
+        function showCorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Correct Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "correct");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Correct: ${q.options[q.correctAnswer]}`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Show Incorrect Answers
+        function showIncorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Incorrect Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] !== q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "incorrect");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Incorrect: ${q.options[userAnswers[index]]} (Correct: ${q.options[q.correctAnswer]})`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Initialize the quiz
+        generateQuiz();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const closeButton = document.getElementById('close-button');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.add('active');
+                closeButton.style.display = 'block';
+                mobileMenu.style.display = 'none';
+            });
+
+            // Close mobile menu
+            closeButton.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                closeButton.style.display = 'none';
+                mobileMenu.style.display = 'flex';
+                
+                // Close all dropdowns when closing the menu
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+
+            // Toggle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns when opening one
+                        if (dropdown.classList.contains('active')) {
+                            dropdowns.forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    if (!navLinks.contains(e.target) && 
+                        !mobileMenu.contains(e.target) && 
+                        !closeButton.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        closeButton.style.display = 'none';
+                        mobileMenu.style.display = 'flex';
+                        
+                        // Close all dropdowns
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+        });
+       
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault(); // Prevent default link behavior
+        const parent = link.parentElement;
+        parent.classList.toggle('open');
+    });
+});
+
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+
+         const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const closeButton = document.getElementById('close-button');
+
+        // Add event listener for the mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Check if the nav links are active
+            if (navLinks.classList.contains('active')) {
+                closeButton.style.display = 'block'; // Show close button
+                mobileMenu.style.display = 'none'; // Hide mobile menu toggle button
+            } else {
+                closeButton.style.display = 'none'; // Hide close button
+                mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+            }
+        });
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+    </script>
+
+</body>
+</html>
