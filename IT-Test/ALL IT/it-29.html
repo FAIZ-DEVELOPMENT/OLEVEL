@@ -7,280 +7,7 @@
     <link rel="stylesheet" href="../../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping for smaller screens */
-        }
-        nav {
-            background-color: var(--primary-color);
-            width: 100%;
-            color: var(--text-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            flex: 1 1 100%; /* Allow full width on small screens */
-        }
-
-        .sidebar {
-            width: 300px;
-            background: #fcfdff;
-            color: rgb(27, 27, 27);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 50px 50px 50px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            
-        }
-
-        .sidebar h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 0px;
-            text-decoration: underline;
-            text-align: center;
-        }
-
-        .sidebar a {
-            display: block;
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            font-size: 16px;
-            margin: 10px 0;
-            padding: 5px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            transition: background 0.3s ease;
-        }
-
-        .sidebar a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .quiz-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 700;
-            color: #0056b3;
-            margin-bottom: 30px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .question-container {
-            border: 2px solid #888888;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #f8f8f8;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .question-container:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .question {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .options {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-        }
-
-        .option {
-            background-color: #f0f0f0;
-            padding: 15px;
-            margin: 8px 0;
-            border-radius: 7px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .option:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.0);
-        }
-
-        .correct {
-            background-color: #d4edda;
-            color: #155724;
-        }
-
-        .incorrect {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-
-        .button {
-            background-color: #0056b3;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 30px;
-            display: block;
-            width: 100%;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #003d80;
-        }
-
-        .button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-
-        .options-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .option:active {
-            transform: scale(0.98);
-        }
-
-        .result-container {
-            margin-top: 30px;
-            padding: 20px;
-            border: 2px solid #0056b3;
-            border-radius: 15px;
-            background-color: #f8f8f8;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .result-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0056b3;
-            margin-bottom: 20px;
-        }
-
-        .result-item {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .result-text {
-            float: right; /* Align to the right */
-            margin-left: 10px; /* Add spacing */
-            font-weight: bold; /* Make it bold */
-        }
-
-        .question-result {
-            margin-bottom: 15px;
-        }
-
-        .question-result.correct {
-            color: green;
-        }
-
-        .question-result.incorrect {
-            color: red;
-        }
-
-        .grade {
-            font-size: 20px;
-            font-weight: 700;
-            margin-top: 20px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .progress {
-            height: 10px;
-            background-color: #0056b3;
-            width: 0;
-            transition: width 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @media (max-width: 1200px){
-            .sidebar{
-                display: none;
-            }
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-              display: none;
-            }
-
-            .container {
-                margin: 20px; /* Reduce margin on small screens */
-            }
-
-            .quiz-title {
-                font-size: 24px; /* Adjust font size */
-            }
-
-            .option {
-                font-size: 16px; /* Adjust option font size */
-            }
-
-            .result-title {
-                font-size: 20px; /* Adjust result title font size */
-            }
-
-            .grade {
-                font-size: 18px; /* Adjust grade font size */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .quiz-title {
-                font-size: 20px; /* Further adjust font size */
-            }
-
-            .option {
-                font-size: 14px; /* Further adjust option font size */
-            }
-
-            .button {
-                padding: 10px; /* Adjust button padding */
-                font-size: 14px; /* Adjust button font size */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="itstyle.css">
 </head>
 <body>
     <nav>
@@ -301,20 +28,20 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a href="../../ms-office.html">Shortcut Keys</a>
+                <a href="ms-office.html">Shortcut Keys</a>
                 <div class="dropdown-content">
-                    <a href="../../word.html">Libre Office Writer</a>
-                    <a href="../../excel.html">Libre Office Calc</a>
-                    <a href="../../powerpoint.html">Libre Office Impress</a>
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
                     
                 </div>
             </li>
             <li class="dropdown">
                 <a href="languages.html">O Level</a>
                 <div class="dropdown-content">
-                    <a href="../../word.html">Information Technology</a>
-                    <a href="../../excel.html">Web Desiginig and Publishing</a>
-                    <a href="../../powerpoint.html">Python Programming</a>
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
                     <a href="#">Internet Of things</a>
                 </div>
             </li>
@@ -330,18 +57,17 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a href="../../onlinenotes.html">Summary</a>
+                <a href="onlinenotes.html">Summary</a>
                 <div class="dropdown-content">
-                    <a href="../../olevel.html">O Level</a>
-                    <a href="../../ms-office.html">MS-Office</a>
-                    <a href="../../languages.html">Programming Languages</a>
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
                 </div>
             </li>
         </ul>
-    </nav>
-    <!-- Main Quiz Container -->
+    </nav>  <!-- Main Quiz Container -->
     <div class="container">
-        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 1</div>
+        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 29</div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
@@ -364,12 +90,8 @@
     </div>
     <div class="sidebar">
         <h2>Useful Links</h2>
-        <a href="https://example.com" target="_blank">Study Materials</a><hr>
-        <a href="https://example.com" target="_blank">Practice Tests</a><hr>
-        <a href="https://example.com" target="_blank">Video Tutorials</a><hr>
-        <a href="https://example.com" target="_blank">Feedback Form</a><hr>
     </div>
-
+    <script src="itscript.js"></script>
     <script>
 const questions = [
     {

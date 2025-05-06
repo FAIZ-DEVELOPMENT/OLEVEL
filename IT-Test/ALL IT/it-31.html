@@ -68,7 +68,7 @@
     </nav>
     <!-- Main Quiz Container -->
     <div class="container">
-        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 14</div>
+        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 31</div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
@@ -95,17 +95,7 @@
     <script src="itscript.js"></script>
     <script>
 const questions = [
-    {
-        question: "___ is a device that connects multiple computers into a network in which multiple communication links can be operated simultaneously.",
-        options: ["A. Switch", "B. Router", "C. Repeater", "D. None of the above"],
-        correctAnswer: 0
-    },
-    {
-        question: "POP3 and ___ are protocols used by a mail server in conjunction with SMTP to receive and hold email for hosts.",
-        options: ["A. HTTP", "B. IP", "C. IMAP4", "D. None of the above"],
-        correctAnswer: 2
-    },
-    {
+{
         question: "Print preview shortcut key is:",
         options: ["A. Ctrl + Shift + 0", "B. Ctrl + Shift + P", "C. Ctrl + P", "D. None of these"],
         correctAnswer: 1
@@ -191,19 +181,123 @@ const questions = [
         correctAnswer: 1
     },
     {
-        question: "An attempt to harm, damage or cause threat to a system or network is known as:",
+        question: "An attempt to harm , damage or cause threat to a system or network is known as:",
         options: ["A. Cyber Crime", "B. Cyber Attack", "C. Digital Crime", "D. System Hijacking"],
         correctAnswer: 1
+    }, {
+        question: "Who among the following is the primary regulator of banking business?",
+        options: ["A. Reserve Bank of India", "B. State Government", "C. Central Government", "D. None of these"],
+        correctAnswer: 0 // A (RBI)
     },
     {
-        question: "One Time password is safe because:",
-        options: ["A. It is easy to generate", "B. It is not shareable", "C. It is different in every access", "D. It is encrypted with password"],
-        correctAnswer: 2
+        question: "______ is an essential concept related to Cloud computing:",
+        options: ["A. Reliability", "B. Productivity", "C. Security", "D. None of these"],
+        correctAnswer: 2 // C (Security)
     },
     {
-        question: "___ is the last column in LibreOffice Calc.",
-        options: ["A. 32", "B. 128", "C. 126", "D. None"],
-        correctAnswer: 3
+        question: "Which of the following layer is an end-to-end layer?",
+        options: ["A. Data Link Layer", "B. Transport Layer", "C. Network Layer", "D. Physical Layer"],
+        correctAnswer: 1 // B (Transport Layer)
+    },
+    {
+        question: "USB is a device used to store data and it stands for:",
+        options: ["A. Unlimited Service Band", "B. Unlimited Serial Bus", "C. Universal Serial Bus", "D. Universal Service Bus"],
+        correctAnswer: 2 // C (Universal Serial Bus)
+    },
+    {
+        question: "What is the best way to create a uniform background image to all slides?",
+        options: ["A. By inserting image on all slides.", "B. Define background image into Slide Master.", "C. Insert image on First Slide.", "D. By copying image to all slides."],
+        correctAnswer: 1 // B (Slide Master)
+    },
+    {
+        question: "Which type of errors are first identified by the word processor?",
+        options: ["A. Spelling error", "B. Grammatically error", "C. Logical error", "D. None of these"],
+        correctAnswer: 0 // A (Spelling error)
+    },
+    {
+        question: "Which of the following is a painting and drawing device?",
+        options: ["A. Mouse", "B. Keyboard", "C. Joystick", "D. None"],
+        correctAnswer: 0 // A (Mouse)
+    },
+    {
+        question: "______ cannot be used to share internet with other users.",
+        options: ["A. Hotspot", "B. Wi-Fi", "C. USB", "D. Keyboard"],
+        correctAnswer: 3 // D (Keyboard)
+    },
+    {
+        question: "A program which is used to view websites is called a:",
+        options: ["A. Browser", "B. Web viewer", "C. Web server", "D. Internet"],
+        correctAnswer: 0 // A (Browser)
+    },
+    {
+        question: "The size of virtual memory is based on:",
+        options: ["A. ROM", "B. RAM", "C. Data bus", "D. Address bus"],
+        correctAnswer: 1 // B (RAM)
+    },
+    {
+        question: "Data in ______ bytes size is called Big Data:",
+        options: ["A. Tera", "B. Giga", "C. Peta", "D. Meta"],
+        correctAnswer: 2 // C (Peta)
+    },
+    {
+        question: "What is the full name of FAT?",
+        options: ["A. File attribute table", "B. File allocation table", "C. Font attribute table", "D. Format allocation table"],
+        correctAnswer: 1 // B (File allocation table)
+    },
+    {
+        question: "In LibreOffice writer, which of the following shortcut is used to Justify the document?",
+        options: ["A. Ctrl + J", "B. Ctrl + Z", "C. Ctrl + P", "D. Ctrl + 0"],
+        correctAnswer: 0 // A (Ctrl + J)
+    },
+    {
+        question: "Who created Bitcoin?",
+        options: ["A. Satoshi Nakamoto", "B. Samsung", "C. China", "D. John McAfee"],
+        correctAnswer: 0 // A (Satoshi Nakamoto)
+    },
+    {
+        question: "Which one is not an element of IoT?",
+        options: ["A. Security", "B. Process", "C. People", "D. Things"],
+        correctAnswer: 2 // C (People)
+    },
+    {
+        question: "Blog is a:",
+        options: ["A. Present article in reverse chronological order.", "B. Title of a book", "C. Special partition in web server.", "D. Name of a search engine."],
+        correctAnswer: 0 // A (Reverse chronological order)
+    },
+    {
+        question: "Key used for Align RIGHT of the text in LibreOffice writer:",
+        options: ["A. Ctrl + P", "B. Ctrl + R", "C. Ctrl + M", "D. Ctrl + 0"],
+        correctAnswer: 1 // B (Ctrl + R)
+    },
+    {
+        question: "Which of the following is not true about the NEFT (National Electronic Funds Transfer) System?",
+        options: ["A. There is no limit on transaction through NEFT", "B. NEFT operates on an hourly basis", "C. NEFT is a payment system which facilitates one to one fund transfer", "D. All of the above"],
+        correctAnswer: 0 // A (There are limits)
+    },
+    {
+        question: "In Linux, a user can load or upload:",
+        options: ["A. I/O Modules", "B. I/O Devices", "C. Kernel Modules", "D. File Base I/O"],
+        correctAnswer: 2 // C (Kernel Modules)
+    },
+    {
+        question: "Which of the following retains the information it's storing when the power of the system is turned off?",
+        options: ["A. CPU", "B. ROM", "C. RAM", "D. DIMM"],
+        correctAnswer: 1 // B (ROM)
+    },
+    {
+        question: "Cloud Services have a relationship with their customers:",
+        options: ["A. Many-to-Many", "B. One-to-Many", "C. One-to-One", "D. None of these"],
+        correctAnswer: 1 // B (One-to-Many)
+    },
+    {
+        question: "PNG refers to:",
+        options: ["A. Image file", "B. Movie/animation file", "C. Audio file", "D. MS Office document"],
+        correctAnswer: 0 // A (Image file)
+    },
+    {
+        question: "By whom was UPI launched?",
+        options: ["A. Urjit Patel", "B. R. Gandhi", "C. Raghuram Rajan", "D. Narendra Modi"],
+        correctAnswer: 3 // D (Narendra Modi)
     },
     {
         question: "In LibreOffice Impress, the shortcut key to insert a text box is:",
@@ -224,8 +318,284 @@ const questions = [
         question: "AEPS stands for:",
         options: ["A. Aadhaar Enabled Payment System", "B. Annual Premium Equivalent System", "C. Aadhar Post Enabled System", "D. Aadhar Payment Enabled Service"],
         correctAnswer: 0
+    },
+    {
+        question: "The speed of supercomputers is measured in:",
+        options: ["A. Kilo bytes", "B. Floating Point Operations per Second", "C. Instruction per second", "D. None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "The keyboard's Backspace key works by:",
+        options: ["A. Deleting characters to the left of the cursor", "B. Erasing characters to the right of the cursor", "C. Deleting the character at the cursor position", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "Multiprogramming systems are designed to maximize:",
+        options: ["A. CPU usage", "B. Keyboard usage", "C. Mouse usage", "D. None"],
+        correctAnswer: 0
+    },
+    {
+        question: "Encryption techniques improve a network's:",
+        options: ["A. Security", "B. Messaging system", "C. Managing system", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "A ___ is a device that connects multiple computers into a network in which multiple communication links can be operated simultaneously.",
+        options: ["A. Switch", "B. Router", "C. Repeater", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "POP3 and ___ are protocols used by a mail server in conjunction with SMTP to receive and hold email for hosts.",
+        options: ["A. HTTP", "B. IP", "C. IMAP4", "D. None of the above"],
+        correctAnswer: 2
+    },
+    {
+        question: "Print preview shortcut key is:",
+        options: ["A. Ctrl + Shift + 0", "B. Ctrl + Shift + P", "C. Ctrl + P", "D. None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "POS means:",
+        options: ["A. Point of Sale", "B. Place of Sale", "C. Point of Sold", "D. None of these"],
+        correctAnswer: 0
+    },
+    {
+        question: "___ is the standard bitmapped format for storing graphics.",
+        options: ["A. .bmp", "B. .mp4", "C. .png", "D. None of these"],
+        correctAnswer: 0
+    },
+    {
+        question: "The amount of money to be charged for a certain amount of insurance coverage is called:",
+        options: ["A. Premium", "B. Deposit amount", "C. Fees", "D. Insurance amount"],
+        correctAnswer: 0
+    },
+    {
+        question: "Account payee cheques can be paid:",
+        options: ["A. By deposit in Bank account", "B. By cash from the bank counter", "C. By giving cash to customer", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "The key combination used to increase the width of the current column in LibreOffice Calc spreadsheet is:",
+        options: ["A. Alt + Left arrow", "B. Alt + Right arrow", "C. Alt + Down arrow", "D. Alt + Up arrow"],
+        correctAnswer: 1
+    },  {
+        question: "FTP is used to:",
+        options: ["A. Transmit information on the web", "B. Send email messages between servers", "C. Upload/download data between computers", "D. Allow devices to request an IP address"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which function key is used as a Refresh button?",
+        options: ["A. F5", "B. F4", "C. F2", "D. F3"],
+        correctAnswer: 0
+    },
+    {
+        question: "During a slide presentation, which key selects hyperlinks?",
+        options: ["A. Tab key", "B. Ctrl + K", "C. Ctrl + H", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which term is related to network security?",
+        options: ["A. DSL", "B. W3C", "C. MIT", "D. Firewall"],
+        correctAnswer: 3
+    },
+    {
+        question: "In LibreOffice Calc, COS, SIN, FACT, EXP are categories of:",
+        options: ["A. Data", "B. Science", "C. Mathematical", "D. Calculation"],
+        correctAnswer: 2
+    },
+    {
+        question: "Internet traffic is also known as:",
+        options: ["A. Congestion", "B. Connection", "C. Concatenation", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "ASCII stands for:",
+        options: ["A. American Standard Code for Information Interface", "B. Abacus Standard Code for Information Interface", "C. American Standard Code for Information Interchange", "D. None of the above"],
+        correctAnswer: 2
+    },
+    {
+        question: "Amazon is the best example of:",
+        options: ["A. Blogging", "B. Social Networking", "C. Entertainment", "D. E-commerce"],
+        correctAnswer: 3
+    },
+    {
+        question: "In which menu is the 'Merge Cells' command found?",
+        options: ["A. Sheet", "B. Format", "C. Style", "D. Insert"],
+        correctAnswer: 1
+    },
+    {
+        question: "What is India’s local search engine for shop details?",
+        options: ["A. Magento.com", "B. Zomato.com", "C. JustDial.com", "D. Makkan.com"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which is the best site for an encyclopedia?",
+        options: ["A. Wikipedia", "B. Yahoo!", "C. Google", "D. Ask"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the file extension for a file saved in Impress?",
+        options: ["A. .odt", "B. .ods", "C. .odp", "D. .odi"],
+        correctAnswer: 2
+    },
+    {
+        question: "E-Governance technology provides:",
+        options: ["A. A platform to exchange information", "B. A platform to give services", "C. A platform connecting citizens", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the default filename in LibreOffice Calc?",
+        options: ["A. Untitled 1", "B. Calc1", "C. Spreadsheet 1", "D. None of the above"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which electronic components are used in 4th-gen computers?",
+        options: ["A. Transistors", "B. Integrated Circuits", "C. Vacuum Tubes", "D. VLSI"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which software helps in sending/receiving emails?",
+        options: ["A. MS-Office", "B. Internet Explorer", "C. MS-Outlook", "D. None of these"],
+        correctAnswer: 2
+    },
+    {
+        question: "Copying a webpage from a server to your computer is called:",
+        options: ["A. Conferencing", "B. Downloading", "C. Uploading", "D. None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "To organize or shorten a slide, you can use:",
+        options: ["A. Slide Pane", "B. Slide Shorter View", "C. Both A and B", "D. None"],
+        correctAnswer: 0
+    },
+    {
+        question: "POS means:",
+        options: ["A. Spyware", "B. Point of Sale", "C. Format > Animation", "D. Binary"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which file formats can be added to LibreOffice Impress?",
+        options: ["A. JPEG", "B. WMV", "C. MPEG", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which is not an e-commerce site?",
+        options: ["A. Twitter", "B. eBay", "C. Amazon", "D. Flipkart"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which is an email service provider?",
+        options: ["A. www.gmail.com", "B. www.yahoomail.com", "C. www.rediffmail.com", "D. All of these"],
+        correctAnswer: 3
+    },
+    {
+        question: "______ key is used for the current date.",
+        options: ["A. Ctrl + Shift + ;", "B. Shift + ;", "C. Ctrl + ;", "D. None"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is a job-searching application?",
+        options: ["A. Facebook", "B. Telegram", "C. Instagram", "D. LinkedIn"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which site is preferred for buying books?",
+        options: ["A. www.yahoomail.com", "B. www.sun.com", "C. www.msn.com", "D. www.amazon.com"],
+        correctAnswer: 3
+    },
+    {
+        question: "The benefit of e-learning is:",
+        options: ["A. Flexible scheduling", "B. Reduces travel time", "C. Study anywhere with internet", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "India’s first computer, made by ECIL, was:",
+        options: ["A. Siddhartha", "B. PARAM", "C. C-DAC", "D. Microsoft"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the value of =ROUND(175, -2)?",
+        options: ["A. 175", "B. 200", "C. 0", "D. 190"],
+        correctAnswer: 1
+    },
+    {
+        question: "UMANG App is part of which initiative?",
+        options: ["A. Swachh Bharat Mission", "B. Mid-Day Meal", "C. Atal Innovation Mission", "D. Digital India"],
+        correctAnswer: 3
+    },
+    {
+        question: "An example of microblogging is:",
+        options: ["A. Twitter", "B. Orkut", "C. Google+", "D. Facebook"],
+        correctAnswer: 0
+    },
+    {
+        question: "E-Sanjeevani is related to:",
+        options: ["A. Transport", "B. Telemedicine", "C. Banking", "D. Railway"],
+        correctAnswer: 1
+    },
+    {
+        question: "The OS does not boot when the system is:",
+        options: ["A. Reset", "B. Powered on", "C. Shutdown", "D. None"],
+        correctAnswer: 2
+    },
+    {
+        question: "Total charts in LibreOffice Calc are:",
+        options: ["A. 11", "B. 10", "C. 12", "D. 9"],
+        correctAnswer: 1
+    },
+    {
+        question: "Social media sites use ______ for account verification.",
+        options: ["A. Retina Scanning", "B. Fingerprint Scanning", "C. CAPTCHA", "D. 2-Step Verification"],
+        correctAnswer: 2
+    },
+    {
+        question: "India’s health service portal is designed by:",
+        options: ["A. NIC", "B. BHEL", "C. HAL", "D. None"],
+        correctAnswer: 0
+    },
+    {
+        question: "The mouse was invented by:",
+        options: ["A. Douglas Engelbart", "B. Christopher Latham Sholes", "C. Ted Nelson", "D. Alan Turing"],
+        correctAnswer: 0
+    },
+    {
+        question: "NeGP’s most successful project is:",
+        options: ["A. Mission-Mode Project (MMP)", "B. Passport Seva Project (PSP)", "C. Both A & B", "D. None"],
+        correctAnswer: 2
+    },
+    {
+        question: "To remove slide transition, we use:",
+        options: ["A. Split Transition", "B. None", "C. Wipe Transition", "D. Push Transition"],
+        correctAnswer: 1
+    },
+    {
+        question: "Shortcut to bookmark in Chrome is:",
+        options: ["A. Ctrl + D", "B. Ctrl + B", "C. Ctrl + Shift + B", "D. Ctrl + Shift + J"],
+        correctAnswer: 0
+    },
+    {
+        question: "John Mauchly and J. Presper Eckert invented the ______ computer.",
+        options: ["A. ENIAC", "B. UNIVAC", "C. EDSAC", "D. Ferranti Mark-I"],
+        correctAnswer: 0
+    },
+    {
+        question: "A system that adapts to environmental changes is called:",
+        options: ["A. Deterministic", "B. Closed", "C. Adaptive", "D. None"],
+        correctAnswer: 2
+    },
+    {
+        question: "___ is used to open the styles and Formatting window in Calc.",
+        options: ["A. F11", "B. F3", "C. F7", "D. F5"],
+        correctAnswer: 0
+    },
+    {
+        question: "___ computer language is used for artificial intelligence.",
+        options: ["A. Prolog", "B. C++", "C. Java", "D. None of these"],
+        correctAnswer: 0
     }
 ];
+
+
 
        const quizContainer = document.getElementById("quiz");
         const resultContainer = document.getElementById("result");

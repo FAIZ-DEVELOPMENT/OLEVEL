@@ -65,10 +65,9 @@
                 </div>
             </li>
         </ul>
-    </nav>
-    <!-- Main Quiz Container -->
+    </nav>    <!-- Main Quiz Container -->
     <div class="container">
-        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 14</div>
+        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 32</div>
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
@@ -96,19 +95,323 @@
     <script>
 const questions = [
     {
-        question: "___ is a device that connects multiple computers into a network in which multiple communication links can be operated simultaneously.",
-        options: ["A. Switch", "B. Router", "C. Repeater", "D. None of the above"],
+        question: "What is the value of =ROUND(175, -2)?",
+        options: ["A. 175", "B. 200", "C. 0", "D. 190"],
+        correctAnswer: 1
+    },
+    {
+        question: "UMANG App is part of which initiative?",
+        options: ["A. Swachh Bharat Mission", "B. Mid-Day Meal", "C. Atal Innovation Mission", "D. Digital India"],
+        correctAnswer: 3
+    },
+    {
+        question: "An example of microblogging is:",
+        options: ["A. Twitter", "B. Orkut", "C. Google+", "D. Facebook"],
         correctAnswer: 0
     },
     {
-        question: "POP3 and ___ are protocols used by a mail server in conjunction with SMTP to receive and hold email for hosts.",
-        options: ["A. HTTP", "B. IP", "C. IMAP4", "D. None of the above"],
+        question: "E-Sanjeevani is related to:",
+        options: ["A. Transport", "B. Telemedicine", "C. Banking", "D. Railway"],
+        correctAnswer: 1
+    },
+    {
+        question: "The three sequential function of CPU operations are",
+        options: ["A) Decode, fetch, execute", "B) Execute, decode, fetch", "C) Fetch, Execute, decode", "D) Fetch, decode, execute"],
+        correctAnswer: 3
+    },
+    {
+        question: "The process of manipulating the data to achieve some meaningful results is called",
+        options: ["A) Data Processing", "B) Information handling", "C) Data sharing", "D) Data distribution"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the Process id of init?",
+        options: ["A) 2", "B) 4", "C) 1", "D) 6"],
         correctAnswer: 2
     },
     {
-        question: "Print preview shortcut key is:",
-        options: ["A. Ctrl + Shift + 0", "B. Ctrl + Shift + P", "C. Ctrl + P", "D. None of these"],
+        question: "Which of the following is the Name of a Linux Kernel file?",
+        options: ["A) Vmlinux", "B) Vmlinuz", "C) Lynx", "D) Linux"],
         correctAnswer: 1
+    },
+    {
+        question: "Which of the following Directories does not contain binary files?",
+        options: ["A) /boot", "B) /etc", "C) /bin", "D) /sbin"],
+        correctAnswer: 1
+    },
+    {
+        question: "What of the following options is used to connect a Windows 10 computer to a Printer?",
+        options: ["A) Bluetooth and other Device", "B) Printer", "C) Printers and Scanners", "D) Scanners"],
+        correctAnswer: 2
+    },
+    {
+        question: "What of the following formats can not be included in LibreOffice?",
+        options: ["A) Html", "B) Exml", "C) Xml", "D) Bip"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which command is used to print in Linux?",
+        options: ["A) Mv", "B) cp", "C) lpr", "D) pt"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is available without any payment?",
+        options: ["A) Freeware", "B) Free software", "C) OSS", "D) FLOSS"],
+        correctAnswer: 1
+    },
+    {
+        question: "In any shell script the first line starts with which of the following?",
+        options: ["A) !", "B) @", "C) $", "D) #"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which is the shortcut key to open 'File Explorer' in Windows 10?",
+        options: ["A) Window key + A", "B) Window key + F", "C) Window key + E", "D) Window key + D"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which command gives you information about how much disk space each file in the current directory uses?",
+        options: ["A) ls -1", "B) ls -la", "C) du", "D) ls -a"],
+        correctAnswer: 2
+    },
+    {
+        question: "Process or task in Linux is represented by?",
+        options: ["A) task build", "B) task struct", "C) task construct", "D) task domain"],
+        correctAnswer: 1
+    },
+    {
+        question: "What is the maximum filename size in Linux in bytes?",
+        options: ["A) 32", "B) 64", "C) 126", "D) 255"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which command is used to check Linux version?",
+        options: ["A) uname -a", "B) uname -n", "C) uname -s", "D) Kernel"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which of the following below is a loopback IP address?",
+        options: ["A. 127.0.0.1", "B. 127.0.1.0", "C. 127.0.1.1", "D. 127.0.0.0"],
+        correctAnswer: 0
+    },
+    {
+        question: "Network topology for large networks is?",
+        options: ["A. Tree", "B. Bus", "C. Star", "D. Hybrid"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which device is commonly shared between computers?",
+        options: ["A. Mouse", "B. Speakers", "C. Printers", "D. Keyboard"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which is an example of email utility?",
+        options: ["A. Word", "B. Outlook", "C. Explorer", "D. Excel"],
+        correctAnswer: 1
+    },
+    {
+        question: "The place where all types of email messages are organized is called what?",
+        options: ["A. Inbox", "B. Mailbox", "C. Outbox", "D. None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following contains the body of the email message?",
+        options: ["A. Image", "B. Both Image and Text", "C. Only image", "D. Only text"],
+        correctAnswer: 1
+    },
+    {
+        question: "In which of the following web portals can users create their free email account?",
+        options: ["A. Hotmail.com", "B. Yahoo.com", "C. gmail.com", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "How many photos can be uploaded to Facebook simultaneously?",
+        options: ["A. 10", "B. 15", "C. 25", "D. 30"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the maximum time limit of video that can be uploaded to Twitter?",
+        options: ["A. 30 Seconds", "B. 1 Minute", "C. 2 Minutes", "D. 2 Minutes 30 seconds"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following is not used in an email address?",
+        options: ["A. Comma (,)", "B. Dot (.)", "C. Numbers (1,2 ,3)", "D. Underscore (_)"],
+        correctAnswer: 0
+    },
+    {
+        question: "All received mails are deposited in:",
+        options: ["A. Inbox", "B. Draft", "C. Sent mail", "D. Nowhere"],
+        correctAnswer: 0
+    },
+    {
+        question: "Full form of SET?",
+        options: ["A. Secure Electronic Transactions", "B. Security end Technology", "C. Security Electronics Transactions", "D. None of these"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which happens first, authorization or authentication?",
+        options: ["A. Authorization", "B. Authentication", "C. Authorization & Authentication", "D. None of the mentioned"],
+        correctAnswer: 1
+    },
+    {
+        question: "A Virus is a network issue.",
+        options: ["A. Performance", "B. Reliability", "C. Security", "D. None of the above"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following are preventive antivirus measures?",
+        options: ["A. Do not open attachments from suspicious sources", "B. Delete chain and junk mails", "C. Backup your files", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "A firewall may be implemented in:",
+        options: ["A. Routers which connect intranet to internet", "B. Bridges used in an intranet", "C. Expensive modem", "D. Users application programs"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which of the following can be treated as private communication through encryption?",
+        options: ["A. Cryptomessaging", "B. Cryptocurrency", "C. Random Messaging", "D. Cryptography"],
+        correctAnswer: 0
+    },
+    {
+        question: "The creeper virus was eventually deleted by a program known as:",
+        options: ["A. The weaper", "B. The reaper", "C. The seaper", "D. None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following is not a VALID type of firewall?",
+        options: ["A. Application-level gateways", "B. Circuit-level gateways", "C. Proxy Server Gateways", "D. Packet filters"],
+        correctAnswer: 2
+    },
+    {
+        question: "What Is On-demand Mail Relay (ODMR)?",
+        options: ["A. HTTP", "B. Protocol For Web Pages", "C. SMTP Extension", "D. SMTP Protocol For Security"],
+        correctAnswer: 2
+    },
+    {
+        question: "How many digits is the MMID (Mobile Money Identifier) number?",
+        options: ["A. 7", "B. 5", "C. 11", "D. 12"],
+        correctAnswer: 0
+    },
+    {
+        question: "A passive threat to computer security is:",
+        options: ["A. Malicious Intent", "B. Sabotage", "C. Accident Errors", "D. Espionage Agents"],
+        correctAnswer: 3
+    },
+    {
+        question: "The maximum filename size in Linux in bytes is:",
+        options: ["A. 32", "B. 64", "C. 126", "D. 255"],
+        correctAnswer: 3
+    },    {
+        question: "If a computer does not have the _____ it cannot 'boot.'",
+        options: ["A) Compiler", "B) Loader", "C) Assembler", "D) Operating system"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following function key is used to perform a spelling check?",
+        options: ["A) F1", "B) F3", "C) F7", "D) F8"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which one is not a search engine?",
+        options: ["A) Microsoft Bing", "B) Yahoo", "C) Wikipedia", "D) Google"],
+        correctAnswer: 2
+    },
+    {
+        question: "Shortcut key of deleting of the cell in LibreOffice Calc?",
+        options: ["A) Ctrl+C", "B) Ctrl++", "C) Delete", "D) Ctrl+-"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of these platforms can LibreOffice work on?",
+        options: ["A) Windows", "B) Linux", "C) Mac", "D) All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "In which menu is the option of Thesaurus in LibreOffice?",
+        options: ["A) Format", "B) Tools", "C) View", "D) None"],
+        correctAnswer: 1
+    },
+    {
+        question: "What is the full form of RAM?",
+        options: ["A) Read Access Memory", "B) Random Access Memory", "C) Red Access Memory", "D) None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "AEPS stands for..?",
+        options: ["A) Aadhaar Enabled Payment Source", "B) Aadhaar Enrolled Payment System", "C) Aadhaar Enabled Payment System", "D) None of the above"],
+        correctAnswer: 2
+    },
+    {
+        question: "____ key is used for redo in LibreOffice Writer?",
+        options: ["A) Ctrl+Y", "B) Ctrl+2", "C) Ctrl+X", "D) Ctrl+Y"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which error code indicates the missing equals sign from the formula?",
+        options: ["A) 508", "B) 509", "C) #VALUE!", "D) None"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which key is used to manage the template in LibreOffice Writer?",
+        options: ["A) Ctrl+N", "B) Ctrl+Shift+N", "C) Shift+0", "D) Ctrl+Shift+O"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is blog? Choose the correct option?",
+        options: ["A) Is a Web page only", "B) It can be Website or Web page", "C) Is a Complete Website", "D) None of these"],
+        correctAnswer: 1
+    },
+    {
+        question: "Features of the Linux operating system?",
+        options: ["A) It is a multi-user operating system", "B) It is a highly secure operating system", "C) It is multitasking operating system", "D) All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "____ key is used for Line Break in LibreOffice Writer without paragraph change?",
+        options: ["A) Shift+Enter", "B) Ctrl+L", "C) Ctrl+Enter", "D) Ctrl+0"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which is the type of page orientation in LibreOffice Writer?",
+        options: ["A) Portrait", "B) Slide", "C) Landscape", "D) Both Portrait & Landscape"],
+        correctAnswer: 3
+    },
+    {
+        question: "Regarding 'DigiLocker', which of the following statements is/are correct?",
+        options: ["A) I only", "B) II only", "C) Both I and II", "D) Neither I nor II"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which shortcut key is used for restoring or refreshing the view of the current document after changing the anti-aliasing settings in LibreOffice?",
+        options: ["A) Shift+Ctrl+R", "B) Shift+Ctrl+X", "C) Shift+Ctrl+S", "D) Shift+R"],
+        correctAnswer: 0
+    },
+    {
+        question: "SMTP stands for:",
+        options: ["A) Simple Mail Terminal Protocol", "B) Simple Mail Transfer Protocol", "C) Simple Mail Transport Protocol", "D) None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "What is the line given above a text?",
+        options: ["A) Below line", "B) Over line", "C) Up line", "D) Upper line"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which is used to determine the timing on slide in a presentation?",
+        options: ["A) Rehearsal", "B) Slide Timer", "C) Slide Timing Tool", "D) Slide Tool"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the max size of attachment in Gmail?",
+        options: ["A) 25 MB", "B) 25 TB", "C) 25 GB", "D) 25 KB"],
+        correctAnswer: 0
+    },
+    {
+        question: "Choose the correct format for Gmail email address?",
+        options: ["A) abc@gmail.com", "B) abc@gmail-com", "C) abcgmall@com", "D) None of the above"],
+        correctAnswer: 0
     },
     {
         question: "POS means:",
@@ -191,7 +494,7 @@ const questions = [
         correctAnswer: 1
     },
     {
-        question: "An attempt to harm, damage or cause threat to a system or network is known as:",
+        question: "An attempt to harm , damage or cause threat to a system or network is known as:",
         options: ["A. Cyber Crime", "B. Cyber Attack", "C. Digital Crime", "D. System Hijacking"],
         correctAnswer: 1
     },
@@ -200,32 +503,95 @@ const questions = [
         options: ["A. It is easy to generate", "B. It is not shareable", "C. It is different in every access", "D. It is encrypted with password"],
         correctAnswer: 2
     },
+    ,
     {
-        question: "___ is the last column in LibreOffice Calc.",
-        options: ["A. 32", "B. 128", "C. 126", "D. None"],
-        correctAnswer: 3
-    },
-    {
-        question: "In LibreOffice Impress, the shortcut key to insert a text box is:",
-        options: ["A. F1", "B. F2", "C. F3", "D. F4"],
-        correctAnswer: 1
-    },
-    {
-        question: "QR code stands for:",
-        options: ["A. Quick Response Code", "B. Quick Reply Code", "C. Quick Register Code", "D. Quick Response Certificate"],
+        question: "OTP stands for:",
+        options: ["A. One time Password", "B. Once and twice password", "C. On time Password", "D. None of the above"],
         correctAnswer: 0
     },
     {
-        question: "Linux operating system is:",
-        options: ["A. Proprietary software", "B. Open Source Software", "C. Closed-source operating system", "D. None of the above"],
+        question: "CC in E-Mail stands for:",
+        options: ["A. Carbon Catch", "B. Carbon Copy", "C. Consider Copy", "D. Carbon coupon"],
         correctAnswer: 1
     },
     {
-        question: "AEPS stands for:",
-        options: ["A. Aadhaar Enabled Payment System", "B. Annual Premium Equivalent System", "C. Aadhar Post Enabled System", "D. Aadhar Payment Enabled Service"],
+        question: "To get Help when using Office, you would click the:",
+        options: ["A. F1 Key", "B. F2 Key", "C. F3 Key", "D. F4 Key"],
         correctAnswer: 0
-    }
+    },
+    {
+        question: "Size of IPV4 is:",
+        options: ["A. 32", "B. 48", "C. 62", "D. 128"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which of the following is a tool to send letters to many recipients in LibreOffice?",
+        options: ["A. What-If", "B. Mail merge", "C. Goal seeking", "D. Sorting"],
+        correctAnswer: 1
+    },
+    {
+        question: "Twitter is an example of:",
+        options: ["A. E-mail system", "B. System application", "C. Social networking", "D. Web URL"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following refers to the fastest, biggest, and most expensive computer?",
+        options: ["A. Personal Computer", "B. Laptops", "C. Super computer", "D. Notebook"],
+        correctAnswer: 2
+    },
+    {
+        question: "In LibreOffice Calc, which symbol appears when a formula error occurs?",
+        options: ["A. #", "B. $", "C. %", "D. &"],
+        correctAnswer: 0
+    },
+    {
+        question: "Banks are the banking correspondents engaged by banks:",
+        options: ["A. Mitra", "B. Manager", "C. Any Person", "D. None of these"],
+        correctAnswer: 0
+    },
+    {
+        question: "___ is the minimum zooming percentage in LibreOffice Impress.",
+        options: ["A. 5", "B. 10", "C. 22", "D. 40"],
+        correctAnswer: 0
+    },
+    {
+        question: "Linux is:",
+        options: ["A. Multiuser, Multitasking", "B. Single user, Multitasking", "C. Multiuser, Single tasking", "D. Single user, Single tasking"],
+        correctAnswer: 0
+    },
+    {
+        question: "The default name of the Impress presentation is:",
+        options: ["A. Calc", "B. Untitled1", "C. Slide 1", "D. Writer"],
+        correctAnswer: 1
+    },
+    {
+        question: "Aadhaar is a:",
+        options: ["A. 11 digit number card", "B. 12 digit number card", "C. 13 digit number card", "D. 14 digit number card"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which mobile wallet permits cash withdrawal?",
+        options: ["A. Open wallet", "B. Semi Open wallet", "C. Semi Closed wallet", "D. None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "Personal logs or journal entries posted on the web are known as:",
+        options: ["A. Blogs", "B. News", "C. Post", "D. None"],
+        correctAnswer: 0
+    },
+    {
+        question: "Twitter was created by?",
+        options: ["A. Jack Dorsey, Noah Glass, Biz Stone, and Evan Williams", "B. Tim Berners-Lee", "C. Mark Zuckerberg", "D. Ray Tomlinson"],
+        correctAnswer: 0
+    },
+    {
+        question: "Aqua user interface was appeared with:",
+        options: ["A. Windows", "B. Shells", "C. MAC OS", "D. Bourne shell"],
+        correctAnswer: 2
+    },
 ];
+
+
 
        const quizContainer = document.getElementById("quiz");
         const resultContainer = document.getElementById("result");
