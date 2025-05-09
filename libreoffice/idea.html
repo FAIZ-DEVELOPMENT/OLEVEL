@@ -3,70 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C Practice | Faiz Computer Institute</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="libreofficewriter.css">
-    <link rel="stylesheet" href="../style.css">
+    <title>LibreOffice Writer Shortcuts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --light-bg: #f5f9ff;
+            --white: #ffffff;
+            --text: #333333;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .container {
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .controls {
+            padding: 15px 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box {
+            flex-grow: 1;
+            padding: 8px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .category-filter {
+            padding: 8px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .shortcut-table th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .shortcut-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .shortcut-table tr:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        .shortcut-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .key {
+            display: inline-block;
+            padding: 3px 8px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 2px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .category {
+            font-weight: 500;
+            color: var(--primary);
+            margin: 20px 0 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
-        <div class="close-button" id="close-button" style="display: none;">&times;</div>
-        <div class="menu-toggle" id="mobile-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="">MCQs </a>
-                <div class="dropdown-content">
-                    <a href="../Nielet.html">O Level</a>
-                    <a href="../ccc.html">CCC</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="ms-office.html">Shortcut Keys</a>
-                <div class="dropdown-content">
-                    <a href="word.html">Libre Office Writer</a>
-                    <a href="excel.html">Libre Office Calc</a>
-                    <a href="powerpoint.html">Libre Office Impress</a>
-                    
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="languages.html">O Level</a>
-                <div class="dropdown-content">
-                    <a href="word.html">Information Technology</a>
-                    <a href="excel.html">Web Desiginig and Publishing</a>
-                    <a href="powerpoint.html">Python Programming</a>
-                    <a href="#">Internet Of things</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="practicalportal.html">Practical Portal</a>
-                <div class="dropdown-content">
-                    
-                    <a href=".html">M1-R5</a>
-                    <a href="../htmlcompiler.html">M2-R5</a>
-                    <a href="../pythoncompiler.html">M3-R5</a>
-                    <a href="../ccompiler.html">M4-R5</a>
-                    <a href="../practicalportal.html">More....</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="onlinenotes.html">Summary</a>
-                <div class="dropdown-content">
-                    <a href="olevel.html">O Level</a>
-                    <a href="ms-office.html">MS-Office</a>
-                    <a href="languages.html">Programming Languages</a>
-                </div>
-            </li>
-        </ul>
-    </nav><br>
     <div class="container">
         <header>
             <h1>LibreOffice Writer Shortcut Keys</h1>
@@ -304,6 +368,87 @@
         </footer>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const tables = document.querySelectorAll('.shortcut-table');
+            const categories = document.querySelectorAll('.category');
 
-    </body>
-    <script src="libreofficewriter.js"></script>
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+
+                tables.forEach(table => {
+                    const rows = table.querySelectorAll('tbody tr');
+                    let hasVisibleRows = false;
+
+                    rows.forEach(row => {
+                        const text = row.textContent.toLowerCase();
+                        const tableCategory = table.getAttribute('data-category');
+                        
+                        const matchesSearch = text.includes(searchTerm);
+                        const matchesCategory = selectedCategory === 'all' || tableCategory === selectedCategory;
+                        
+                        if (matchesSearch && matchesCategory) {
+                            row.style.display = '';
+                            hasVisibleRows = true;
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+
+                    // Show/hide entire table based on visibility
+                    const parentSection = table.closest('h2').nextElementSibling;
+                    if (hasVisibleRows && (selectedCategory === 'all' || table.getAttribute('data-category') === selectedCategory)) {
+                        table.style.display = '';
+                        table.previousElementSibling.style.display = '';
+                    } else {
+                        table.style.display = 'none';
+                        table.previousElementSibling.style.display = 'none';
+                    }
+                });
+            });
+
+            // Category filter functionality
+            categoryFilter.addEventListener('change', function() {
+                const selectedCategory = this.value;
+                const searchTerm = searchInput.value.toLowerCase();
+
+                tables.forEach(table => {
+                    const tableCategory = table.getAttribute('data-category');
+                    const shouldShow = selectedCategory === 'all' || tableCategory === selectedCategory;
+                    
+                    if (shouldShow) {
+                        table.style.display = '';
+                        table.previousElementSibling.style.display = '';
+                        
+                        // Apply search filter within visible category
+                        const rows = table.querySelectorAll('tbody tr');
+                        let hasVisibleRows = false;
+                        
+                        rows.forEach(row => {
+                            const text = row.textContent.toLowerCase();
+                            if (text.includes(searchTerm)) {
+                                row.style.display = '';
+                                hasVisibleRows = true;
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                        
+                        if (!hasVisibleRows && searchTerm !== '') {
+                            table.style.display = 'none';
+                            table.previousElementSibling.style.display = 'none';
+                        }
+                    } else {
+                        table.style.display = 'none';
+                        table.previousElementSibling.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

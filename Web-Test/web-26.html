@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="webstyle.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="../../Nielet.html">O Level</a>
+                    <a href="../../ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Shortcut Keys</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">O Level</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
+                    <a href="#">Internet Of things</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    
+                    <a href=".html">M1-R5</a>
+                    <a href="../../htmlcompiler.html">M2-R5</a>
+                    <a href="../../pythoncompiler.html">M3-R5</a>
+                    <a href="../../ccompiler.html">M4-R5</a>
+                    <a href="../../practicalportal.html">More....</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Quiz Container -->
+    <div class="container">
+        <div class="quiz-title"><br>M2-R5<br>(Web Designing and Publishing)<br>Mock Test 26</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <button class="button" id="submitBtn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+
+        <!-- Buttons for showing Correct and Incorrect answers -->
+        <button class="button" id="showCorrectBtn" onclick="showCorrectAnswers()" style="display:none;">Show Correct Answers</button>
+        <button class="button" id="showIncorrectBtn" onclick="showIncorrectAnswers()" style="display:none;">Show Incorrect Answers</button>
+
+        <div id="result" class="result-container" style="display: none;">
+            <div class="result-title">Quiz Results</div>
+            <div class="result-item" id="totalMarks"></div>
+            <div class="result-item" id="correctAnswers"></div>
+            <div class="result-item" id="wrongAnswers"></div>
+            <div class="result-item" id="attemptedQuestions"></div>
+            <div class="result-item" id="grade"></div>
+            <div class="result-item" id="questionResults"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>Useful Links</h2>
+    </div>
+    <script src="webscript.js"></script>
+    <script>
+     const questions = [
+  {
+    question: "Which of the following is the correct syntax to display \"This is O LEVEL Class\" in an alert box using JavaScript?",
+    options: [
+      "alertbox(\"This is O LEVEL Class\");",
+      "alert(\"This is O LEVEL Class\");",
+      "msgbox(\"This is O LEVEL Class\");",
+      "None of the above"
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: "Which class is used to display text over an image in W3.CSS?",
+    options: [
+      "w3-display-middle (or other w3-display-* classes)",
+      "w3-card",
+      "w3-image",
+      "w3-text-over-image"
+    ],
+    correctAnswer: 0
+  },
+  {
+    question: "Which class is used to create awesome Input control in W3.CSS?",
+    options: ["w3-input", "w3-label", "w3-checkbox", "w3-checkmark"],
+    correctAnswer: 0
+  },
+  {
+    question: "Which tag encloses all the tags, attributes, and information to be displayed on the Web page?",
+    options: ["<HTML>", "<BODY>", "<FONT>", "<P>"],
+    correctAnswer: 0
+  },
+  {
+    question: "Which class specifies a column in a 12-column grid in W3.CSS?",
+    options: ["w3-col", "w3-column", "w3-image", "None of the above"],
+    correctAnswer: 0
+  },
+  {
+    question: "In 1993, the first graphical browser called ______ was released.",
+    options: ["skype-tv", "Mosaic", "pandora", "None of the above"],
+    correctAnswer: 1
+  },
+  {
+    question: "HTML\n<!DOCTYPE html>\n<HEAD>\n<TITLE>\nWhich tag is missing to complete the basic structure of an HTML page?",
+    options: ["<BODY>", "<CLASS>", "<HTML>", "None of the above"],
+    correctAnswer: 0
+  },
+  {
+    question: "A CSS Rule set contains a selector and a ______.",
+    options: ["declaration block", "class", "HTML code", "None of the above"],
+    correctAnswer: 0
+  },
+  {
+    question: "______ is a global hypertext system that was initially developed in 1989 by Tim Berners Lee.",
+    options: ["WWW", "FTP", "TCP", "None of these"],
+    correctAnswer: 0
+  },
+  {
+    question: "Which one of the following is an example of a class selector in CSS?",
+    options: [
+      "h2{color:#000000;}",
+      ".h2{color:#000000;}",
+      "#h2{color:#000000;}",
+      "None of the above"
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: "Which W3.css class is used to make text left-aligned?",
+    options: ["w3-align-left", "w3-left", "w3-left-align", "w3-text-left"],
+    correctAnswer: 3
+  },
+  {
+    question: "Bootstrap is used for ______.",
+    options: ["Web Applications", "A Lot Of Internet Of Things", "Bigdata", "Data"],
+    correctAnswer: 0
+  },
+  {
+    question: "______ is text with hyperlinks.",
+    options: ["Lower text", "Upper text", "Toggle text", "Hypertext"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which W3.CSS class adds borders on the top, right, bottom, and left (all sides) of an element?",
+    options: ["w3-border", "w3-border-all", "w3-border-0", "All of these"],
+    correctAnswer: 0
+  },
+  {
+    question: "The w3-container class is the perfect class to use for ______.",
+    options: ["<div>", "<article>, <header>, <footer>", "<section>", "All of these"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following services are available on the World Wide Web?\nI. Encryption\nII. HTTP\nIII. HTML\nIV. Firewalls",
+    options: ["I and II", "II and III", "III and IV", "II and IV"],
+    correctAnswer: 1
+  },
+  {
+    question: "Protocols are:",
+    options: [
+      "Agreements on how communication components and DTE's are to communicate.",
+      "Logical communication channels for transferring data.",
+      "Physical communication channels used for transferring data.",
+      "None of the above"
+    ],
+    correctAnswer: 0
+  },
+  {
+    question: "W3.CSS is an alternative to ______.",
+    options: ["Bootstrap", "JavaScript", "Angular JS", "HTML"],
+    correctAnswer: 0
+  },
+  {
+    question: "w3-color class is used for:",
+    options: ["to Set Background Color", "to Set TEXT Color", "to Set the Border color", "All of these"],
+    correctAnswer: 0
+  },
+  {
+    question: "What is a cookie?",
+    options: [
+      "Computer Code used to show animation and play sound.",
+      "Information sent to the computer that is used later to give information back to the visited website.",
+      "An advertisement that will at some time be displayed on your screen.",
+      "Computer code that automatically records all purchases and payments you make from your computer."
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: "https is a:",
+    options: ["Scripting language", "Browser", "Security connection", "Authoring Tool"],
+    correctAnswer: 2
+  },
+  {
+    question: "The Domain name in a URL refers to the:",
+    options: ["Protocol", "Server", "Filename", "Directory"],
+    correctAnswer: 1
+  },
+  {
+    question: "W3.css is used for:",
+    options: ["Client-Side Scripting", "Styling HTML elements", "Plug-ins", "Scripts"],
+    correctAnswer: 1
+  },
+  {
+    question: "Desirable properties of a website are:\ni. a meaningful address\nii. help and search facilities\niii. links to related sites\niv. features to allow users to give feedback\nv. hosting on a mainframe",
+    options: ["i., ii., iii.", "i., ii., iii., iv.", "i., ii., iii., iv., v.", "i., ii., iii., v."],
+    correctAnswer: 1
+  },
+  {
+    question: "Which Class Produces the Largest Font Size in W3.CSS?",
+    options: ["w3-jumbo", "w3-xxxlarge", "w3-xxlarge", "w3-xlarge"],
+    correctAnswer: 0
+  },
+  {
+    question: "Which of the following is not a valid HTML tag?",
+    options: ["<HTML>", "<BODY>", "<HEAD>", "<TEXT>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS property?",
+    options: ["color", "font-size", "background-color", "text-decoration"],
+    correctAnswer: 0
+  },
+  {
+    question: "Which of the following is not a valid HTML attribute?",
+    options: ["href", "src", "alt", "link"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS selector?",
+    options: [".class", "#id", "element", "*"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML element?",
+    options: ["<div>", "<span>", "<p>", "<text>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS value?",
+    options: ["px", "%", "em", "text"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML document type declaration?",
+    options: ["<!DOCTYPE html>", "<!DOCTYPE html PUBLIC>", "<!DOCTYPE html SYSTEM>", "<!DOCTYPE html5>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS property value?",
+    options: ["red", "#ff0000", "rgb(255,0,0)", "color:red"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML form element?",
+    options: ["<input>", "<textarea>", "<select>", "<button>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS unit?",
+    options: ["px", "em", "rem", "%"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML link attribute?",
+    options: ["href", "src", "alt", "link"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS color value?",
+    options: ["red", "#ff0000", "rgb(255,0,0)", "color:red"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML image attribute?",
+    options: ["src", "alt", "width", "height"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS background property?",
+    options: ["background-color", "background-image", "background-repeat", "background-position"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML table element?",
+    options: ["<table>", "<tr>", "<td>", "<th>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS text property?",
+    options: ["text-align", "text-decoration", "text-transform", "text-style"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML list element?",
+    options: ["<ul>", "<ol>", "<li>", "<dl>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS margin property?",
+    options: ["margin-top", "margin-right", "margin-bottom", "margin-left"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML header element?",
+    options: ["<h1>", "<h2>", "<h3>", "<h4>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS padding property?",
+    options: ["padding-top", "padding-right", "padding-bottom", "padding-left"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML meta tag?",
+    options: ["<meta>", "<meta name>", "<meta content>", "<meta charset>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS font property?",
+    options: ["font-family", "font-size", "font-style", "font-weight"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML audio element?",
+    options: ["<audio>", "<source>", "<track>", "<video>"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid CSS display property?",
+    options: ["block", "inline", "flex", "grid"],
+    correctAnswer: 3
+  },
+  {
+    question: "Which of the following is not a valid HTML video element?",
+    options: ["<video>", "<source>", "<track>", "<audio>"],
+    correctAnswer: 3
+  }
+];
+        const quizContainer = document.getElementById("quiz");
+        const resultContainer = document.getElementById("result");
+        const progressBar = document.getElementById("progress");
+        let answeredQuestions = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        const userAnswers = new Array(questions.length).fill(null); // Track user answers
+
+        // Create the quiz HTML
+        function generateQuiz() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question-container");
+
+                const questionTitle = document.createElement("div");
+                questionTitle.classList.add("question");
+                questionTitle.innerText = `${index + 1}. ${q.question}`;
+                questionDiv.appendChild(questionTitle);
+
+                const optionsList = document.createElement("div");
+                optionsList.classList.add("options-container");
+
+                q.options.forEach((option, i) => {
+                    const optionItem = document.createElement("div");
+                    optionItem.classList.add("option");
+                    optionItem.innerText = option;
+                    optionItem.addEventListener("click", () => checkAnswer(index, i, optionItem));
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionDiv.appendChild(optionsList);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Check the answer
+        function checkAnswer(questionIndex, selectedOptionIndex, selectedElement) {
+            const question = questions[questionIndex];
+
+            if (userAnswers[questionIndex] === null) {
+                userAnswers[questionIndex] = selectedOptionIndex;
+
+                // Create a span element to display "Correct" or "Incorrect"
+                const resultSpan = document.createElement("span");
+                resultSpan.classList.add("result-text"); // Add a class for styling
+                resultSpan.style.float = "right"; // Align to the right
+                resultSpan.style.marginLeft = "10px"; // Add spacing
+                resultSpan.style.fontWeight = "bold"; // Make it bold
+
+                if (selectedOptionIndex === question.correctAnswer) {
+                    correctAnswers++;
+                    resultSpan.innerText = "✅ Correct"; // Add "Correct" text
+                    resultSpan.style.color = "green"; // Green color for correct
+                    selectedElement.classList.add("correct");
+                } else {
+                    wrongAnswers++;
+                    resultSpan.innerText = "❌ Incorrect"; // Add "Incorrect" text
+                    resultSpan.style.color = "red"; // Red color for incorrect
+                    selectedElement.classList.add("incorrect");
+
+                    // Show correct answer immediately for wrong selections
+                    const correctOptionIndex = question.correctAnswer;
+                    const optionsContainer = selectedElement.parentElement;
+                    const correctOptionElement = optionsContainer.children[correctOptionIndex];
+
+                    // Add "Correct" to the correct option
+                    const correctSpan = document.createElement("span");
+                    correctSpan.classList.add("result-text");
+                    correctSpan.innerText = "✅ Correct";
+                    correctSpan.style.float = "right";
+                    correctSpan.style.marginLeft = "10px";
+                    correctSpan.style.color = "green";
+                    correctSpan.style.fontWeight = "bold";
+                    correctOptionElement.appendChild(correctSpan);
+                    correctOptionElement.classList.add("correct");
+                }
+
+                // Append the result span to the selected option
+                selectedElement.appendChild(resultSpan);
+            }
+
+            // Disable further clicks on options
+            const options = selectedElement.parentElement.children;
+            Array.from(options).forEach(option => option.style.pointerEvents = 'none');
+
+            answeredQuestions++;
+            updateProgressBar();
+            toggleSubmitButton();
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = (answeredQuestions / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Enable/Disable the submit button
+        function toggleSubmitButton() {
+            const submitButton = document.getElementById('submitBtn');
+            if (answeredQuestions === questions.length) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const totalMarks = correctAnswers;
+            const attemptedQuestions = answeredQuestions;
+
+            document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks}`;
+            document.getElementById('correctAnswers').innerText = `Correct Answers: ${correctAnswers}`;
+            document.getElementById('wrongAnswers').innerText = `Wrong Answers: ${wrongAnswers}`;
+            document.getElementById('attemptedQuestions').innerText = `Attempted Questions: ${attemptedQuestions}`;
+            // Calculate Grade
+            let grade = '';
+            const percentage = (correctAnswers / questions.length) * 100;
+            if (percentage >= 90) grade = 'A';
+            else if (percentage >= 75) grade = 'B';
+            else if (percentage >= 50) grade = 'C';
+            else grade = 'F';
+            document.getElementById('grade').innerText = `Grade: ${grade}`;
+
+            // Display which questions were correct and which were wrong
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Question-wise Results:</strong>";
+            questions.forEach((q, index) => {
+                const resultDiv = document.createElement("div");
+                resultDiv.classList.add("question-result");
+                if (userAnswers[index] === q.correctAnswer) {
+                    resultDiv.classList.add("correct");
+                    resultDiv.innerText = `${index + 1}. Correct: ${q.question}`;
+                } else {
+                    resultDiv.classList.add("incorrect");
+                    resultDiv.innerText = `${index + 1}. Incorrect: ${q.question} (Correct Answer: ${q.options[q.correctAnswer]})`;
+                }
+                questionResults.appendChild(resultDiv);
+            });
+
+            // Show the "Show Correct/Incorrect" buttons
+            document.getElementById("showCorrectBtn").style.display = 'block';
+            document.getElementById("showIncorrectBtn").style.display = 'block';
+
+            resultContainer.style.display = 'block';
+        }
+
+        // Show Correct Answers
+        function showCorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Correct Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "correct");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Correct: ${q.options[q.correctAnswer]}`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Show Incorrect Answers
+        function showIncorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Incorrect Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] !== q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "incorrect");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Incorrect: ${q.options[userAnswers[index]]} (Correct: ${q.options[q.correctAnswer]})`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Initialize the quiz
+        generateQuiz();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const closeButton = document.getElementById('close-button');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.add('active');
+                closeButton.style.display = 'block';
+                mobileMenu.style.display = 'none';
+            });
+          
+            // Close mobile menu
+            closeButton.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                closeButton.style.display = 'none';
+                mobileMenu.style.display = 'flex';
+                
+                // Close all dropdowns when closing the menu
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+
+            // Toggle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns when opening one
+                        if (dropdown.classList.contains('active')) {
+                            dropdowns.forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    if (!navLinks.contains(e.target) && 
+                        !mobileMenu.contains(e.target) && 
+                        !closeButton.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        closeButton.style.display = 'none';
+                        mobileMenu.style.display = 'flex';
+                        
+                        // Close all dropdowns
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+        });
+       
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault(); // Prevent default link behavior
+        const parent = link.parentElement;
+        parent.classList.toggle('open');
+    });
+});
+
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+
+         const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const closeButton = document.getElementById('close-button');
+
+        // Add event listener for the mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Check if the nav links are active
+            if (navLinks.classList.contains('active')) {
+                closeButton.style.display = 'block'; // Show close button
+                mobileMenu.style.display = 'none'; // Hide mobile menu toggle button
+            } else {
+                closeButton.style.display = 'none'; // Hide close button
+                mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+            }
+        });
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+    </script>
+
+</body>
+</html>

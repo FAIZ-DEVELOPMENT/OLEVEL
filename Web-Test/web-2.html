@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="webstyle.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="../../Nielet.html">O Level</a>
+                    <a href="../../ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Shortcut Keys</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">O Level</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
+                    <a href="#">Internet Of things</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    
+                    <a href=".html">M1-R5</a>
+                    <a href="../../htmlcompiler.html">M2-R5</a>
+                    <a href="../../pythoncompiler.html">M3-R5</a>
+                    <a href="../../ccompiler.html">M4-R5</a>
+                    <a href="../../practicalportal.html">More....</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Quiz Container -->
+    <div class="container">
+        <div class="quiz-title"><br>M2-R5<br>(Web Designing and Publishing)<br>Mock Test 2</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <button class="button" id="submitBtn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+
+        <!-- Buttons for showing Correct and Incorrect answers -->
+        <button class="button" id="showCorrectBtn" onclick="showCorrectAnswers()" style="display:none;">Show Correct Answers</button>
+        <button class="button" id="showIncorrectBtn" onclick="showIncorrectAnswers()" style="display:none;">Show Incorrect Answers</button>
+
+        <div id="result" class="result-container" style="display: none;">
+            <div class="result-title">Quiz Results</div>
+            <div class="result-item" id="totalMarks"></div>
+            <div class="result-item" id="correctAnswers"></div>
+            <div class="result-item" id="wrongAnswers"></div>
+            <div class="result-item" id="attemptedQuestions"></div>
+            <div class="result-item" id="grade"></div>
+            <div class="result-item" id="questionResults"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>Useful Links</h2>
+    </div>
+    <script src="webscript.js"></script>
+    <script>
+    const questions = [
+    {
+        question: "Which of the following expressions is true?",
+        options: ["A. (expression}", "B. [{expression}]", "C. _expression", "D. {{expression}}"],
+        correctAnswer: 3
+    },
+    {
+        question: "How will you make all paragraph elements 'GREY' in color?",
+        options: [
+            "A. p.all {color: grey;}",
+            "B. p.all {color: #990000;}",
+            "C. all.p {color: #998877;}",
+            "D. p {color: grey;}"
+        ],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following properties is used to set the face of a font?",
+        options: ["A. font-family", "B. font-face", "C. font-variant", "D. font-style"],
+        correctAnswer: 0
+    },
+        {
+    question: "Which CSS attribute(s) should one use to create a pink dotted border around an image?",
+    options: [
+        "A. border-line",
+        "B. border-style",
+        "C. border-color",
+        "D. Both border-style and border-color"
+    ],
+    correctAnswer: 3
+},{
+    question: "Which CSS attribute(s) should one use to create a pink dotted border around an image?",
+    options: [
+        "A. border-line",
+        "B. border-style",
+        "C. border-color",
+        "D. Both border-style and border-color"
+    ],
+    correctAnswer: 3
+},
+    {
+        question: "What does HTTP stand for?",
+        options: [
+            "A. HyperText Transfer Protocol",
+            "B. Hyper Transfer Text Protocol",
+            "C. HyperText Transmission Protocol",
+            "D. Hyper Transmission Text Protocol"
+        ],
+        correctAnswer: 0
+    },
+    {
+        question: "Image ___ is changing the appearance of an image by altering the colors of the pixels.",
+        options: ["A. Cropping", "B. Filtering", "C. Blurring", "D. Rotating"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following is the correct option for the requirement of web publishing?",
+        options: ["A. Internet Connection", "B. Web development software", "C. Web Server", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following is correct?",
+        options: [
+            "A. Style sheets allow content to be optimized for more than one type of device.",
+            "B. CSS can store web applications locally with the help of an offline cache.",
+            "C. Using CSS, we can view offline websites. The cache also ensures faster loading and better performance.",
+            "D. All of the above."
+        ],
+        correctAnswer: 3
+    },
+    {
+        question: "___ is a declaration for an HTML5 document.",
+        options: ["A. <!DOCTYPE html>", "B. </DOCTYPE html>", "C. <DOCTYPE html>", "D. \\<DOCTYPE html!>"],
+        correctAnswer: 0
+    },
+    {
+        question: "A color system's range of colors that it can display or print is called?",
+        options: ["A. Dithering", "B. The Gamut", "C. Color Model", "D. None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following is a correct CSS syntax?",
+        options: [
+            "A. {body;color:orange;}",
+            "B. {body:color=orange;}",
+            "C. body:color=orange;",
+            "D. body {color:orange;}"
+        ],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following is the CSS Extension Prefixes for Webkit?",
+        options: ["A. -webkit", "B. -o", "C. -web", "D. -chrome"],
+        correctAnswer: 0
+    },
+    {
+        question: "HTML metadata is present in which of the following tags?",
+        options: ["A. <head>", "B. <body>", "C. <title>", "D. <p>"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which of the following is the smallest heading tag in HTML?",
+        options: ["A. <h3>", "B. <h1>", "C. <h6>", "D. <h5>"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which property indicates that the user is currently clicking on an element?",
+        options: ["A. :link", "B. :visited", "C. :hover", "D. :active"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following is true for pseudo-class in CSS?",
+        options: [
+            "A. Match a specified element.",
+            "B. Select the active links.",
+            "C. Used to select all visited links.",
+            "D. Used to define a special state of an element."
+        ],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the file extension for a Photoshop file?",
+        options: ["A. .psd", "B. .pds", "C. .photo", "D. .phsd"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which of the following is an example of a search engine on the internet?",
+        options: ["A. MS Office", "B. Google", "C. Gmail", "D. Windows"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which CSS Selector will be used to define a single element's style?",
+        options: ["A. Id", "B. Class", "C. Text", "D. Name"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the proper HTML syntax for referencing an external style sheet?",
+        options: [
+            "A. <style src=\"demostyle.css\">",
+            "B. <stylesheet>demostyle.css</stylesheet>",
+            "C. <link rel=\"stylesheet\" type=\"text/css\" href=\"demostyle.css\">",
+            "D. None of these"
+        ],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is not a text editor?",
+        options: ["A. Paint", "B. Sublime", "C. Notepad++", "D. Visual Studio Code"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which of the following is used to apply a specific rule and can never be overridden in CSS?",
+        options: ["A. @important", "B. !important!", "C. !important", "D. important!"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which feature of Photoshop tracks recent changes made to an image?",
+        options: ["A. Help", "B. Creative Suite", "C. History Panel", "D. File"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is not a valid HTML tag?",
+        options: ["A. <div>", "B. <span>", "C. <img>", "D. <text>"],
+        correctAnswer: 3
+    }
+];
+
+        const quizContainer = document.getElementById("quiz");
+        const resultContainer = document.getElementById("result");
+        const progressBar = document.getElementById("progress");
+        let answeredQuestions = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        const userAnswers = new Array(questions.length).fill(null); // Track user answers
+
+        // Create the quiz HTML
+        function generateQuiz() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question-container");
+
+                const questionTitle = document.createElement("div");
+                questionTitle.classList.add("question");
+                questionTitle.innerText = `${index + 1}. ${q.question}`;
+                questionDiv.appendChild(questionTitle);
+
+                const optionsList = document.createElement("div");
+                optionsList.classList.add("options-container");
+
+                q.options.forEach((option, i) => {
+                    const optionItem = document.createElement("div");
+                    optionItem.classList.add("option");
+                    optionItem.innerText = option;
+                    optionItem.addEventListener("click", () => checkAnswer(index, i, optionItem));
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionDiv.appendChild(optionsList);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Check the answer
+        function checkAnswer(questionIndex, selectedOptionIndex, selectedElement) {
+            const question = questions[questionIndex];
+
+            if (userAnswers[questionIndex] === null) {
+                userAnswers[questionIndex] = selectedOptionIndex;
+
+                // Create a span element to display "Correct" or "Incorrect"
+                const resultSpan = document.createElement("span");
+                resultSpan.classList.add("result-text"); // Add a class for styling
+                resultSpan.style.float = "right"; // Align to the right
+                resultSpan.style.marginLeft = "10px"; // Add spacing
+                resultSpan.style.fontWeight = "bold"; // Make it bold
+
+                if (selectedOptionIndex === question.correctAnswer) {
+                    correctAnswers++;
+                    resultSpan.innerText = "✅ Correct"; // Add "Correct" text
+                    resultSpan.style.color = "green"; // Green color for correct
+                    selectedElement.classList.add("correct");
+                } else {
+                    wrongAnswers++;
+                    resultSpan.innerText = "❌ Incorrect"; // Add "Incorrect" text
+                    resultSpan.style.color = "red"; // Red color for incorrect
+                    selectedElement.classList.add("incorrect");
+
+                    // Show correct answer immediately for wrong selections
+                    const correctOptionIndex = question.correctAnswer;
+                    const optionsContainer = selectedElement.parentElement;
+                    const correctOptionElement = optionsContainer.children[correctOptionIndex];
+
+                    // Add "Correct" to the correct option
+                    const correctSpan = document.createElement("span");
+                    correctSpan.classList.add("result-text");
+                    correctSpan.innerText = "✅ Correct";
+                    correctSpan.style.float = "right";
+                    correctSpan.style.marginLeft = "10px";
+                    correctSpan.style.color = "green";
+                    correctSpan.style.fontWeight = "bold";
+                    correctOptionElement.appendChild(correctSpan);
+                    correctOptionElement.classList.add("correct");
+                }
+
+                // Append the result span to the selected option
+                selectedElement.appendChild(resultSpan);
+            }
+
+            // Disable further clicks on options
+            const options = selectedElement.parentElement.children;
+            Array.from(options).forEach(option => option.style.pointerEvents = 'none');
+
+            answeredQuestions++;
+            updateProgressBar();
+            toggleSubmitButton();
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = (answeredQuestions / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Enable/Disable the submit button
+        function toggleSubmitButton() {
+            const submitButton = document.getElementById('submitBtn');
+            if (answeredQuestions === questions.length) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const totalMarks = correctAnswers;
+            const attemptedQuestions = answeredQuestions;
+
+            document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks}`;
+            document.getElementById('correctAnswers').innerText = `Correct Answers: ${correctAnswers}`;
+            document.getElementById('wrongAnswers').innerText = `Wrong Answers: ${wrongAnswers}`;
+            document.getElementById('attemptedQuestions').innerText = `Attempted Questions: ${attemptedQuestions}`;
+            // Calculate Grade
+            let grade = '';
+            const percentage = (correctAnswers / questions.length) * 100;
+            if (percentage >= 90) grade = 'A';
+            else if (percentage >= 75) grade = 'B';
+            else if (percentage >= 50) grade = 'C';
+            else grade = 'F';
+            document.getElementById('grade').innerText = `Grade: ${grade}`;
+
+            // Display which questions were correct and which were wrong
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Question-wise Results:</strong>";
+            questions.forEach((q, index) => {
+                const resultDiv = document.createElement("div");
+                resultDiv.classList.add("question-result");
+                if (userAnswers[index] === q.correctAnswer) {
+                    resultDiv.classList.add("correct");
+                    resultDiv.innerText = `${index + 1}. Correct: ${q.question}`;
+                } else {
+                    resultDiv.classList.add("incorrect");
+                    resultDiv.innerText = `${index + 1}. Incorrect: ${q.question} (Correct Answer: ${q.options[q.correctAnswer]})`;
+                }
+                questionResults.appendChild(resultDiv);
+            });
+
+            // Show the "Show Correct/Incorrect" buttons
+            document.getElementById("showCorrectBtn").style.display = 'block';
+            document.getElementById("showIncorrectBtn").style.display = 'block';
+
+            resultContainer.style.display = 'block';
+        }
+
+        // Show Correct Answers
+        function showCorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Correct Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "correct");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Correct: ${q.options[q.correctAnswer]}`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Show Incorrect Answers
+        function showIncorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Incorrect Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] !== q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "incorrect");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Incorrect: ${q.options[userAnswers[index]]} (Correct: ${q.options[q.correctAnswer]})`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Initialize the quiz
+        generateQuiz();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const closeButton = document.getElementById('close-button');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.add('active');
+                closeButton.style.display = 'block';
+                mobileMenu.style.display = 'none';
+            });
+          
+            // Close mobile menu
+            closeButton.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                closeButton.style.display = 'none';
+                mobileMenu.style.display = 'flex';
+                
+                // Close all dropdowns when closing the menu
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+
+            // Toggle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns when opening one
+                        if (dropdown.classList.contains('active')) {
+                            dropdowns.forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    if (!navLinks.contains(e.target) && 
+                        !mobileMenu.contains(e.target) && 
+                        !closeButton.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        closeButton.style.display = 'none';
+                        mobileMenu.style.display = 'flex';
+                        
+                        // Close all dropdowns
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+        });
+       
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault(); // Prevent default link behavior
+        const parent = link.parentElement;
+        parent.classList.toggle('open');
+    });
+});
+
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+
+         const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const closeButton = document.getElementById('close-button');
+
+        // Add event listener for the mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Check if the nav links are active
+            if (navLinks.classList.contains('active')) {
+                closeButton.style.display = 'block'; // Show close button
+                mobileMenu.style.display = 'none'; // Hide mobile menu toggle button
+            } else {
+                closeButton.style.display = 'none'; // Hide close button
+                mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+            }
+        });
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+    </script>
+
+</body>
+</html>
